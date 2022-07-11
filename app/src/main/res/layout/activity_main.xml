@@ -4,4 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.5"
+        android:orientation="vertical" />
+
+    <TextView
+        android:id="@+id/text_view_car"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/text_view_statistic"
+        android:background="@color/bg_button1"
+        android:padding="60dp"
+        android:onClick="onClickTextView"
+        android:drawableLeft="@drawable/ic_baseline_directions_car_24"
+        android:gravity="center"
+        android:text="@string/button_car"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_statistic"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:text="@string/button_statistic"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        android:textColor="@color/white"
+        android:background="@color/bg_button2"
+        android:padding="50dp"
+        android:onClick="onClickTextView"
+        android:drawableLeft="@drawable/ic_baseline_cruelty_free_24"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_car" />
+
+    <TextView
+        android:id="@+id/text_view_money"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_toStartOf="@+id/text_view_statistic"
+        android:text="@string/button_money"
+        android:textColor="@color/white"
+        android:padding="60dp"
+        android:onClick="onClickTextView"
+        android:drawableLeft="@drawable/ic_baseline_attach_money_24"
+        android:background="@color/bg_button3"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_alignParentStart="true"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

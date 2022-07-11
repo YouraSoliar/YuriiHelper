@@ -3,4 +3,5 @@
     <string name="button_money">MONEY</string>
     <string name="button_statistic">STATISTIC</string>
     <string name="button_car">CAR</string>
+    <string name="text_view_open_google_form">Open Google Form</string>
 </resources>

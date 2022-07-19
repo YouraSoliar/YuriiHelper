@@ -1,8 +1,6 @@
 package com.example.yuriihelper;
 
 import android.app.ProgressDialog;
-import android.app.VoiceInteractor;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -10,13 +8,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -31,11 +26,12 @@ import java.util.Map;
 
 public class MoneyActivity extends AppCompatActivity {
 
-    public EditText editTextCurrency;
-    public EditText editTextPriceOnMarket;
-    public EditText editTextSpend;
-    public EditText editTextDate;
+    public EditText editTextType;
+    public EditText editTextTicker;
+    public EditText editTextActualPrice;
+    public EditText editTextSpentUSD;
     public EditText editTextAmount;
+    public EditText editTextDate;
     public Button buttonInsert;
 
     ProgressDialog progressDialog;
@@ -53,11 +49,12 @@ public class MoneyActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        editTextCurrency = findViewById(R.id.edit_text_currency);
-        editTextPriceOnMarket = findViewById(R.id.edit_text_price_on_market);
-        editTextSpend = findViewById(R.id.edit_text_spend);
-        editTextDate = findViewById(R.id.edit_text_date);
+        editTextType = findViewById(R.id.edit_text_type);
+        editTextTicker = findViewById(R.id.edit_text_ticker);
+        editTextActualPrice = findViewById(R.id.edit_text_actual_price);
+        editTextSpentUSD = findViewById(R.id.edit_text_spent_usd);
         editTextAmount = findViewById(R.id.edit_text_amount);
+        editTextDate = findViewById(R.id.edit_text_date);
 
         progressDialog = new ProgressDialog(MoneyActivity.this);
         progressDialog.setMessage("Loading...");
@@ -74,13 +71,15 @@ public class MoneyActivity extends AppCompatActivity {
     }
 
     private void addMoneyData() {
-        String currency = editTextCurrency.getText().toString();
-        String priceInMarket = editTextPriceOnMarket.getText().toString();
-        String spend = editTextSpend.getText().toString();
-        String date = editTextDate.getText().toString();
+        String id = String.valueOf(0);
+        String type = editTextType.getText().toString();
+        String ticker = editTextTicker.getText().toString();
+        String actualPrice = editTextActualPrice.getText().toString();
+        String spentUSD = editTextSpentUSD.getText().toString();
         String amount = editTextAmount.getText().toString();
+        String date = editTextDate.getText().toString();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbwbtSrohh6DYCY7I32fKbN0eHIijMrmL36lHJU0-5Hq68RC-TV3R9gx677EqcXysGX8EA/exec", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbwra-n2G55HCCX0HQsc-eRSUADgXC7YCEIK9U26pnF7BQs1tS-aBQdpVePklue9PPc5gg/exec", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(MoneyActivity.this, "Success", Toast.LENGTH_SHORT).show();
@@ -96,11 +95,13 @@ public class MoneyActivity extends AppCompatActivity {
             protected Map<String, String> getParams()  {
                 Map<String, String> params = new HashMap<>();
                 params.put("action", "addMoneyData");
-                params.put("currency", currency);
-                params.put("priceInMarket", priceInMarket);
-                params.put("spend", spend);
-                params.put("date", date);
+                params.put("id", id);
+                params.put("type", type);
+                params.put("ticker", ticker);
+                params.put("actualPrice", actualPrice);
+                params.put("spentUSD", spentUSD);
                 params.put("amount", amount);
+                params.put("date", date);
 
                 return params;
             }

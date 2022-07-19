@@ -6,61 +6,136 @@
     android:layout_height="match_parent"
     tools:context=".MoneyActivity">
 
-    <EditText
-        android:id="@+id/edit_text_currency"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
 
     <EditText
-        android:id="@+id/edit_text_price_on_market"
+        android:id="@+id/edit_text_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_currency" />
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <EditText
-        android:id="@+id/edit_text_spend"
+        android:id="@+id/edit_text_ticker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:paddingTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_price_on_market" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_type" />
 
     <EditText
-        android:id="@+id/edit_text_date"
+        android:id="@+id/edit_text_actual_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:paddingTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_spend" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_ticker" />
+
+    <EditText
+        android:id="@+id/edit_text_spent_usd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:paddingTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_actual_price" />
 
     <EditText
         android:id="@+id/edit_text_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:paddingTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_date" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_spent_usd" />
+
+    <EditText
+        android:id="@+id/edit_text_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_amount" />
 
     <Button
         android:id="@+id/button_insert"
+        android:layout_width="170dp"
+        android:layout_height="90dp"
+        android:textSize="30sp"
+        android:layout_marginBottom="200dp"
+        android:text="@string/button_send"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/text_view_type"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_text_type"
+        app:layout_constraintEnd_toStartOf="@+id/edit_text_type"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <TextView
+        android:id="@+id/textViewTicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_ticker"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_text_ticker"
+        app:layout_constraintEnd_toStartOf="@+id/edit_text_ticker"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_type" />
+
+    <TextView
+        android:id="@+id/textViewActualPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_actual_price"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_text_actual_price"
+        app:layout_constraintEnd_toStartOf="@+id/edit_text_actual_price"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_ticker" />
+
+    <TextView
+        android:id="@+id/textViewSpentUSD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_spent_usd"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_text_spent_usd"
+        app:layout_constraintEnd_toStartOf="@+id/edit_text_spent_usd"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_actual_price" />
+
+    <TextView
+        android:id="@+id/textViewAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_amount"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_text_amount"
+        app:layout_constraintEnd_toStartOf="@+id/edit_text_amount"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_spent_usd" />
+
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_date"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_text_date"
+        app:layout_constraintEnd_toStartOf="@+id/edit_text_date"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_amount" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

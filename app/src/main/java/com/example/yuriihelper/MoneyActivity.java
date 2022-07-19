@@ -1,13 +1,16 @@
 package com.example.yuriihelper;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,12 +24,14 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
 public class MoneyActivity extends AppCompatActivity {
 
-    public EditText editTextType;
+    public Spinner spinnerType;
     public EditText editTextTicker;
     public EditText editTextActualPrice;
     public EditText editTextSpentUSD;
@@ -49,7 +54,7 @@ public class MoneyActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        editTextType = findViewById(R.id.edit_text_type);
+        spinnerType = findViewById(R.id.spinnerType);
         editTextTicker = findViewById(R.id.edit_text_ticker);
         editTextActualPrice = findViewById(R.id.edit_text_actual_price);
         editTextSpentUSD = findViewById(R.id.edit_text_spent_usd);
@@ -58,6 +63,12 @@ public class MoneyActivity extends AppCompatActivity {
 
         progressDialog = new ProgressDialog(MoneyActivity.this);
         progressDialog.setMessage("Loading...");
+
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        String strDate = sdf.format(c.getTime());
+
+        editTextDate.setText(strDate);
 
         buttonInsert = findViewById(R.id.button_insert);
         buttonInsert.setOnClickListener(new View.OnClickListener() {
@@ -72,12 +83,12 @@ public class MoneyActivity extends AppCompatActivity {
 
     private void addMoneyData() {
         String id = String.valueOf(0);
-        String type = editTextType.getText().toString();
-        String ticker = editTextTicker.getText().toString();
-        String actualPrice = editTextActualPrice.getText().toString();
-        String spentUSD = editTextSpentUSD.getText().toString();
-        String amount = editTextAmount.getText().toString();
-        String date = editTextDate.getText().toString();
+        String type = spinnerType.getSelectedItem().toString().trim();
+        String ticker = editTextTicker.getText().toString().trim();
+        String actualPrice = editTextActualPrice.getText().toString().trim();
+        String spentUSD = editTextSpentUSD.getText().toString().trim();
+        String amount = editTextAmount.getText().toString().trim();
+        String date = editTextDate.getText().toString().trim();
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbwra-n2G55HCCX0HQsc-eRSUADgXC7YCEIK9U26pnF7BQs1tS-aBQdpVePklue9PPc5gg/exec", new Response.Listener<String>() {
             @Override

@@ -12,4 +12,9 @@
     <string name="text_view_ticker">Ticker</string>
     <string name="text_view_type">Type</string>
 
+    <string-array name="spinner_type">
+        <item>Crypto</item>
+        <item>Stock</item>
+    </string-array>
+
 </resources>

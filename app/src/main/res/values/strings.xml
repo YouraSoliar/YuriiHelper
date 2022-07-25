@@ -8,13 +8,20 @@
     <string name="text_view_date">Date</string>
     <string name="text_view_amount">Amount</string>
     <string name="text_view_spent_usd">Spent USD</string>
+    <string name="text_view_get_usd">Get USD</string>
     <string name="text_view_actual_price">Actual price</string>
     <string name="text_view_ticker">Ticker</string>
     <string name="text_view_type">Type</string>
+    <string name="text_view_operation">Operation</string>
 
     <string-array name="spinner_type">
         <item>Crypto</item>
         <item>Stock</item>
+    </string-array>
+
+    <string-array name="spinner_operation">
+        <item>Buy</item>
+        <item>Sell</item>
     </string-array>
 
 </resources>

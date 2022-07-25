@@ -2,6 +2,7 @@ package com.example.yuriihelper;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ import java.util.Map;
 public class MoneyActivity extends AppCompatActivity {
 
     public Spinner spinnerType;
+    public Spinner spinnerOperation;
     public EditText editTextTicker;
     public EditText editTextActualPrice;
     public EditText editTextSpentUSD;
@@ -39,22 +41,21 @@ public class MoneyActivity extends AppCompatActivity {
     public EditText editTextDate;
     public Button buttonInsert;
 
+    private SharedPreferences sharedPreferences;
+
     ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_money);
-        getSupportActionBar().setTitle("Money");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#A95698"));
-        getSupportActionBar().setBackgroundDrawable(colorDrawable);
 
         initView();
     }
 
     private void initView() {
         spinnerType = findViewById(R.id.spinnerType);
+        spinnerOperation = findViewById(R.id.spinnerOperation);
         editTextTicker = findViewById(R.id.edit_text_ticker);
         editTextActualPrice = findViewById(R.id.edit_text_actual_price);
         editTextSpentUSD = findViewById(R.id.edit_text_spent_usd);
@@ -63,6 +64,11 @@ public class MoneyActivity extends AppCompatActivity {
 
         progressDialog = new ProgressDialog(MoneyActivity.this);
         progressDialog.setMessage("Loading...");
+
+        getSupportActionBar().setTitle("Money");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#A95698"));
+        getSupportActionBar().setBackgroundDrawable(colorDrawable);
 
         Calendar c = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
@@ -78,19 +84,32 @@ public class MoneyActivity extends AppCompatActivity {
                 progressDialog.show();
             }
         });
+    }
 
+    private String getID() {
+
+        sharedPreferences = getSharedPreferences("id", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        int id = sharedPreferences.getInt("id_key", 0);
+
+        editor.putInt("id_key", ++id);
+        editor.apply();
+
+        return String.valueOf(id);
     }
 
     private void addMoneyData() {
-        String id = String.valueOf(0);
+        String id = getID();
         String type = spinnerType.getSelectedItem().toString().trim();
+        String operation = spinnerOperation.getSelectedItem().toString().trim();
         String ticker = editTextTicker.getText().toString().trim();
         String actualPrice = editTextActualPrice.getText().toString().trim();
         String spentUSD = editTextSpentUSD.getText().toString().trim();
         String amount = editTextAmount.getText().toString().trim();
         String date = editTextDate.getText().toString().trim();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbwra-n2G55HCCX0HQsc-eRSUADgXC7YCEIK9U26pnF7BQs1tS-aBQdpVePklue9PPc5gg/exec", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbwhaUGiRTlWWvr6ETsK190YiMdbRlzjQjPlA6YqziH-1VvcXTDT_pRLlGliFNJ1vRWjvg/exec", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(MoneyActivity.this, "Success", Toast.LENGTH_SHORT).show();
@@ -108,6 +127,7 @@ public class MoneyActivity extends AppCompatActivity {
                 params.put("action", "addMoneyData");
                 params.put("id", id);
                 params.put("type", type);
+                params.put("operation", operation);
                 params.put("ticker", ticker);
                 params.put("actualPrice", actualPrice);
                 params.put("spentUSD", spentUSD);

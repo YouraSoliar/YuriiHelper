@@ -22,6 +22,15 @@
         app:layout_constraintEnd_toEndOf="@+id/edit_text_ticker"
         app:layout_constraintStart_toStartOf="@+id/edit_text_ticker" />
 
+    <Spinner
+        android:id="@+id/spinnerOperation"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:entries="@array/spinner_operation"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerType"
+        app:layout_constraintEnd_toEndOf="@+id/edit_text_ticker"
+        app:layout_constraintStart_toStartOf="@+id/edit_text_ticker" />
+
     <EditText
         android:id="@+id/edit_text_ticker"
         android:layout_width="wrap_content"
@@ -31,7 +40,7 @@
         android:paddingTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerType" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerOperation" />
 
     <EditText
         android:id="@+id/edit_text_actual_price"
@@ -101,6 +110,17 @@
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <TextView
+        android:id="@+id/textViewOperation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_operation"
+        android:paddingRight="20dp"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerOperation"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerOperation"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerType" />
+
+    <TextView
         android:id="@+id/textViewTicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -109,7 +129,7 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/edit_text_ticker"
         app:layout_constraintEnd_toStartOf="@+id/edit_text_ticker"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerType" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerOperation" />
 
     <TextView
         android:id="@+id/textViewActualPrice"

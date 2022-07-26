@@ -7,39 +7,46 @@
     tools:context=".MoneyActivity">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
+        android:id="@+id/guidelineHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.15" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+
     <Spinner
         android:id="@+id/spinnerType"
         android:layout_width="0dp"
         android:layout_height="45dp"
+        android:background="@drawable/border_bottom_spinner"
         android:entries="@array/spinner_type"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal"
         app:layout_constraintEnd_toEndOf="@+id/edit_text_ticker"
-        app:layout_constraintStart_toStartOf="@+id/edit_text_ticker" />
+        app:layout_constraintStart_toEndOf="@+id/guidelineVertical" />
 
     <Spinner
         android:id="@+id/spinnerOperation"
         android:layout_width="0dp"
         android:layout_height="45dp"
+        android:background="@drawable/border_bottom_spinner"
         android:entries="@array/spinner_operation"
         app:layout_constraintTop_toBottomOf="@+id/spinnerType"
         app:layout_constraintEnd_toEndOf="@+id/edit_text_ticker"
-        app:layout_constraintStart_toStartOf="@+id/edit_text_ticker" />
+        app:layout_constraintStart_toEndOf="@+id/guidelineVertical" />
 
     <EditText
         android:id="@+id/edit_text_ticker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        app:layout_constraintHorizontal_bias="0.8"
         android:paddingTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
         app:layout_constraintTop_toBottomOf="@+id/spinnerOperation" />
 
     <EditText
@@ -48,9 +55,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:paddingTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_ticker" />
 
     <EditText
@@ -58,10 +63,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        app:layout_constraintHorizontal_bias="0.8"
         android:paddingTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_actual_price" />
 
     <EditText
@@ -69,23 +72,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        app:layout_constraintHorizontal_bias="0.8"
         android:paddingTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_spent_usd" />
 
     <EditText
         android:id="@+id/edit_text_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:ems="9"
         android:paddingTop="10dp"
-        app:layout_constraintHorizontal_bias="0.8"
         android:paddingBottom="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_amount" />
+
+    <ImageView
+        android:id="@+id/button_calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_text_date"
+        app:layout_constraintStart_toEndOf="@+id/edit_text_date"
+        app:layout_constraintTop_toTopOf="@+id/edit_text_date"
+        app:srcCompat="@drawable/ic_baseline_calendar_month_24" />
 
     <Button
         android:id="@+id/button_insert"
@@ -102,12 +110,12 @@
         android:id="@+id/textViewType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_view_type"
         android:paddingRight="20dp"
+        android:text="@string/text_view_type"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/spinnerType"
-        app:layout_constraintEnd_toStartOf="@+id/spinnerType"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal" />
 
     <TextView
         android:id="@+id/textViewOperation"
@@ -117,7 +125,7 @@
         android:paddingRight="20dp"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/spinnerOperation"
-        app:layout_constraintEnd_toStartOf="@+id/spinnerOperation"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
         app:layout_constraintTop_toBottomOf="@+id/spinnerType" />
 
     <TextView
@@ -128,7 +136,7 @@
         android:paddingRight="20dp"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/edit_text_ticker"
-        app:layout_constraintEnd_toStartOf="@+id/edit_text_ticker"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
         app:layout_constraintTop_toBottomOf="@+id/spinnerOperation" />
 
     <TextView
@@ -139,7 +147,7 @@
         android:textSize="17sp"
         android:text="@string/text_view_actual_price"
         app:layout_constraintBottom_toBottomOf="@+id/edit_text_actual_price"
-        app:layout_constraintEnd_toStartOf="@+id/edit_text_actual_price"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_ticker" />
 
     <TextView
@@ -150,7 +158,7 @@
         android:textSize="17sp"
         android:text="@string/text_view_spent_usd"
         app:layout_constraintBottom_toBottomOf="@+id/edit_text_spent_usd"
-        app:layout_constraintEnd_toStartOf="@+id/edit_text_spent_usd"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_actual_price" />
 
     <TextView
@@ -161,7 +169,7 @@
         android:textSize="17sp"
         android:text="@string/text_view_amount"
         app:layout_constraintBottom_toBottomOf="@+id/edit_text_amount"
-        app:layout_constraintEnd_toStartOf="@+id/edit_text_amount"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_spent_usd" />
 
     <TextView
@@ -172,7 +180,7 @@
         android:paddingRight="20dp"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/edit_text_date"
-        app:layout_constraintEnd_toStartOf="@+id/edit_text_date"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_amount" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

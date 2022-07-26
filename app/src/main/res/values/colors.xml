@@ -7,6 +7,7 @@
     <color name="blue_200">#96AAE0</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00ffffff</color>
 
     <color name="bg_button1">#6E5A94</color>
     <color name="bg_button2">#3F547B</color>

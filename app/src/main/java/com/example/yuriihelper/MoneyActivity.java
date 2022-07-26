@@ -126,7 +126,7 @@ public class MoneyActivity extends AppCompatActivity {
         String amount = editTextAmount.getText().toString().trim();
         String date = editTextDate.getText().toString().trim();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbwhaUGiRTlWWvr6ETsK190YiMdbRlzjQjPlA6YqziH-1VvcXTDT_pRLlGliFNJ1vRWjvg/exec", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbxcMwpNkpCxJNp8bT0-AUG2-djx00rwXPrCx2ERe-MqWsmM3tv7Ee528OC4jMOpkRKUow/exec", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(MoneyActivity.this, "Success", Toast.LENGTH_SHORT).show();

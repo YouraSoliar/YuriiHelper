@@ -1,6 +1,6 @@
 package com.example.yuriihelper;
 
-import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -9,9 +9,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -33,18 +34,21 @@ import java.util.Map;
 
 public class MoneyActivity extends AppCompatActivity {
 
-    public Spinner spinnerType;
-    public Spinner spinnerOperation;
-    public EditText editTextTicker;
-    public EditText editTextActualPrice;
-    public EditText editTextSpentUSD;
-    public EditText editTextAmount;
-    public EditText editTextDate;
-    public Button buttonInsert;
+    private Spinner spinnerType;
+    private Spinner spinnerOperation;
+    private EditText editTextTicker;
+    private EditText editTextActualPrice;
+    private EditText editTextSpentUSD;
+    private EditText editTextAmount;
+    private EditText editTextDate;
+    private Button buttonInsert;
+    private ImageView imageCalendar;
 
     private SharedPreferences sharedPreferences;
+    private Calendar calendar;
 
-    ProgressDialog progressDialog;
+    private ProgressDialog progressDialog;
+    private DatePickerDialog.OnDateSetListener setListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,37 +56,15 @@ public class MoneyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_money);
 
         initView();
+        initAction();
     }
 
-    private void initView() {
-        spinnerType = findViewById(R.id.spinnerType);
-        spinnerOperation = findViewById(R.id.spinnerOperation);
-        editTextTicker = findViewById(R.id.edit_text_ticker);
-        editTextActualPrice = findViewById(R.id.edit_text_actual_price);
-        editTextSpentUSD = findViewById(R.id.edit_text_spent_usd);
-        editTextAmount = findViewById(R.id.edit_text_amount);
-        editTextDate = findViewById(R.id.edit_text_date);
-
-        progressDialog = new ProgressDialog(MoneyActivity.this);
-        progressDialog.setMessage("Loading...");
-
-        getSupportActionBar().setTitle("Money");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#A95698"));
-        getSupportActionBar().setBackgroundDrawable(colorDrawable);
-
-        Calendar c = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        String strDate = sdf.format(c.getTime());
-
-        editTextDate.setText(strDate);
-
-        buttonInsert = findViewById(R.id.button_insert);
+    private void initAction() {
         buttonInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (isEmptyText(editTextTicker) || isEmptyText(editTextActualPrice) || isEmptyText(editTextSpentUSD)
-                        || isEmptyText(editTextAmount)) {
+                        || isEmptyText(editTextAmount) || isEmptyText(editTextDate)) {
                     Toast.makeText(MoneyActivity.this, "Fill all fields", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isDigitsOnly((CharSequence) editTextSpentUSD.getText())){
                     addMoneyData();
@@ -92,6 +74,67 @@ public class MoneyActivity extends AppCompatActivity {
                 }
             }
         });
+
+        imageCalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final int year = calendar.get(Calendar.YEAR);
+                final int month = calendar.get(Calendar.MONTH);
+                final int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(
+                        MoneyActivity.this, android.R.style.Theme_Holo_Dialog_MinWidth, setListener, year, month, day);
+                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                datePickerDialog.show();
+            }
+        });
+
+        setListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month + 1;
+                String date = "";
+                if (String.valueOf(day).length() == 1) {
+                    date = "0" + day + "-";
+                } else {
+                    date = day + "-";
+                }
+                if (String.valueOf(month).length() == 1) {
+                    date = date + "0" + month + "-";
+                } else {
+                    date = date + month + "-";
+                }
+                editTextDate.setText(date + year);
+            }
+        };
+    }
+
+
+    private void initView() {
+        spinnerType = findViewById(R.id.spinnerType);
+        spinnerOperation = findViewById(R.id.spinnerOperation);
+        editTextTicker = findViewById(R.id.edit_text_ticker);
+        editTextActualPrice = findViewById(R.id.edit_text_actual_price);
+        editTextSpentUSD = findViewById(R.id.edit_text_spent_usd);
+        editTextAmount = findViewById(R.id.edit_text_amount);
+        editTextDate = findViewById(R.id.edit_text_date);
+        imageCalendar = findViewById(R.id.image_calendar);
+
+        progressDialog = new ProgressDialog(MoneyActivity.this);
+        progressDialog.setMessage("Loading...");
+
+        getSupportActionBar().setTitle("Money");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#A95698"));
+        getSupportActionBar().setBackgroundDrawable(colorDrawable);
+
+        calendar = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        String strDate = sdf.format(calendar.getTime());
+
+        editTextDate.setText(strDate);
+
+        buttonInsert = findViewById(R.id.button_insert);
     }
 
     private boolean isEmptyText(EditText editText) {

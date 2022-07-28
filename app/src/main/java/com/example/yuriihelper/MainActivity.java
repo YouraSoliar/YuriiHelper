@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textViewCar;
     TextView textViewMoney;
     TextView textViewStatistic;
+    TextView textViewNotification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         textViewCar = findViewById(R.id.text_view_car);
         textViewMoney = findViewById(R.id.text_view_money);
         textViewStatistic = findViewById(R.id.text_view_statistic);
+        textViewNotification = findViewById(R.id.text_view_notification);
     }
 
 
@@ -43,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.text_view_statistic:
                 intent = new Intent(getApplicationContext(), StatisticActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.text_view_notification:
+                intent = new Intent(getApplicationContext(), NotificationActivity.class);
                 startActivity(intent);
                 break;
             default:

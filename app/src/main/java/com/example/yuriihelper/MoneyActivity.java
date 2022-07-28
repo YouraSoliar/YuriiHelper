@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -80,10 +81,21 @@ public class MoneyActivity extends AppCompatActivity {
         buttonInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addMoneyData();
-                progressDialog.show();
+                if (isEmptyText(editTextTicker) || isEmptyText(editTextActualPrice) || isEmptyText(editTextSpentUSD)
+                        || isEmptyText(editTextAmount)) {
+                    Toast.makeText(MoneyActivity.this, "Fill all fields", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isDigitsOnly((CharSequence) editTextSpentUSD.getText())){
+                    addMoneyData();
+                    progressDialog.show();
+                } else {
+                    Toast.makeText(MoneyActivity.this, "Spent USD filed should`n contain letters", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+    }
+
+    private boolean isEmptyText(EditText editText) {
+        return editText.getText().toString().trim().matches("");
     }
 
     private String getID() {
@@ -105,7 +117,11 @@ public class MoneyActivity extends AppCompatActivity {
         String operation = spinnerOperation.getSelectedItem().toString().trim();
         String ticker = editTextTicker.getText().toString().trim();
         String actualPrice = editTextActualPrice.getText().toString().trim();
-        String spentUSD = editTextSpentUSD.getText().toString().trim();
+        int usd = Integer.parseInt(editTextSpentUSD.getText().toString().trim());
+        if (spinnerOperation.getSelectedItem().toString().trim().equals("Buy")) {
+            usd *= (-1);
+        }
+        String spentUSD = String.valueOf(usd);
         String amount = editTextAmount.getText().toString().trim();
         String date = editTextDate.getText().toString().trim();
 

@@ -18,16 +18,19 @@ import android.widget.Toolbar;
 
 public class StatisticActivity extends AppCompatActivity {
 
-    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistic);
+
+        initView();
+    }
+
+    private void initView() {
         getSupportActionBar().setTitle("Statistic");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#3F547B"));
-        getSupportActionBar().setBackgroundDrawable(colorDrawable);
 
+        getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(this, R.color.bg_button2));
     }
 
     public void openLink(View view) {

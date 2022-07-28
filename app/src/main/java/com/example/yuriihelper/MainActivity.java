@@ -6,14 +6,20 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 
 public class MainActivity extends AppCompatActivity {
     
-    TextView textViewCar;
-    TextView textViewMoney;
-    TextView textViewStatistic;
-    TextView textViewNotification;
+    private TextView textViewCar;
+    private TextView textViewMoney;
+    private TextView textViewStatistic;
+    private TextView textViewNotification;
+
+    private TextView textViewDollar;
+    private TextView textViewOldDollar;
+    private TextView textViewEuro;
+    private TextView textViewOldEuro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +28,30 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Main menu");
         
         initView();
+        initAction();
+    }
+
+    private void initAction() {
+        double dollar = 39.0;
+        double oldDollar = 38.0;
+        double euro = 43.0;
+        double oldEuro = 44.0;
+
+        textViewDollar.setText(String.valueOf(dollar));
+        textViewOldDollar.setText(String.valueOf(oldDollar));
+        textViewEuro.setText(String.valueOf(euro));
+        textViewOldEuro.setText(String.valueOf(oldEuro));
+
+        if (dollar > oldDollar) {
+            textViewDollar.setTextColor(ContextCompat.getColor(this, R.color.red));
+        } else {
+            textViewDollar.setTextColor(ContextCompat.getColor(this, R.color.green));
+        }
+        if (euro > oldEuro) {
+            textViewEuro.setTextColor(ContextCompat.getColor(this, R.color.red));
+        } else {
+            textViewEuro.setTextColor(ContextCompat.getColor(this, R.color.green));
+        }
     }
 
     private void initView() {
@@ -29,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
         textViewMoney = findViewById(R.id.text_view_money);
         textViewStatistic = findViewById(R.id.text_view_statistic);
         textViewNotification = findViewById(R.id.text_view_notification);
+
+        textViewDollar = findViewById(R.id.textViewDollar);
+        textViewOldDollar = findViewById(R.id.textViewOldDollar);
+        textViewEuro = findViewById(R.id.textViewEuro);
+        textViewOldEuro = findViewById(R.id.textViewOldEuro);
     }
 
 

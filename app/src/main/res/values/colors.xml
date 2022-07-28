@@ -12,4 +12,7 @@
     <color name="bg_button2">#3F547B</color>
     <color name="bg_button3">#A95698</color>
     <color name="bg_button4">#2F4858</color>
+
+    <color name="green">#03A80A</color>
+    <color name="red">#C50C0C</color>
 </resources>

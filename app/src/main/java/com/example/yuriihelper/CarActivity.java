@@ -1,6 +1,7 @@
 package com.example.yuriihelper;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -13,10 +14,15 @@ public class CarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car);
+
+        initView();
+    }
+
+    private void initView() {
         getSupportActionBar().setTitle("Car");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#6E5A94"));
-        getSupportActionBar().setBackgroundDrawable(colorDrawable);
+
+        getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(this, R.color.bg_button1));
     }
 
     @Override
@@ -25,3 +31,4 @@ public class CarActivity extends AppCompatActivity {
         return true;
     }
 }
+

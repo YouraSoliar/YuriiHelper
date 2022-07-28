@@ -88,29 +88,41 @@
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/text_view_money" />
 
+    <Spinner
+        android:id="@+id/spinnerCurrency"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:background="@drawable/border_spinner"
+        android:entries="@array/spinner_currency"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="140dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_statistic" />
+
     <TextView
         android:id="@+id/textViewLabelDollar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_view_usd"
-        android:textStyle="bold"
-        android:textSize="25sp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="200dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textViewDollar" />
+        android:text="@string/text_view_usd"
+        android:layout_marginTop="15dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textViewDollar"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCurrency" />
 
     <TextView
         android:id="@+id/textViewDollar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="39.00"
-        android:textStyle="bold"
-        android:textSize="25sp"
         android:layout_marginEnd="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="200dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"/>
+        android:text="39.00"
+        android:textSize="25sp"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCurrency" />
 
     <TextView
         android:id="@+id/textViewOldDollar"
@@ -140,25 +152,25 @@
         android:id="@+id/textViewLabelEuro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
-        android:text="@string/text_view_euro"
         android:layout_marginEnd="10dp"
+        android:text="@string/text_view_euro"
+        android:layout_marginTop="15dp"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textViewEuro" />
+        app:layout_constraintEnd_toStartOf="@+id/textViewEuro"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCurrency" />
 
     <TextView
         android:id="@+id/textViewEuro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="42.00"
-        android:textStyle="bold"
-        android:textSize="25sp"
         android:layout_marginEnd="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="200dp"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:text="42.00"
+        android:textSize="25sp"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCurrency" />
 
 
     <TextView

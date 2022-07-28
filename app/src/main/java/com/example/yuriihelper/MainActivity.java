@@ -2,11 +2,19 @@ package com.example.yuriihelper;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.IOException;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewEuro;
     private TextView textViewOldEuro;
 
+    private Document document;
+    private Thread secondThread;
+    private Runnable runnable;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         
         initView();
         initAction();
+        initThread();
     }
 
     private void initAction() {
@@ -88,6 +101,38 @@ public class MainActivity extends AppCompatActivity {
                 break;
             default:
                 break;
+        }
+    }
+
+    private void initThread() {
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                getWeb();
+
+
+            }
+        };
+        secondThread = new Thread(runnable);
+        secondThread.start();
+    }
+
+    public void getWeb() {
+        try {
+            document = Jsoup.connect("https://minfin.com.ua/ua/currency/").get();
+            Elements table = document.getElementsByTag("tbody");
+            Element tableCurrency = table.get(0);
+            Elements elementsFromTable = tableCurrency.children();
+
+            Element dollar = elementsFromTable.get(0);
+            Element euro = elementsFromTable.get(1);
+
+            Elements dollar_elements = dollar.children();
+            Elements euro_elements = euro.children();
+
+            Log.d("MyLod", "" + euro_elements.get(0).text());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

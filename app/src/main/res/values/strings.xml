@@ -28,4 +28,10 @@
         <item>Sell</item>
     </string-array>
 
+    <string-array name="spinner_currency">
+        <item>Average In Banks</item>
+        <item>National Bank of Ukraine</item>
+        <item>Black Market</item>
+    </string-array>
+
 </resources>

@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +40,7 @@ public class MoneyActivity extends AppCompatActivity {
     public EditText editTextSpentUSD;
     public EditText editTextAmount;
     public EditText editTextDate;
+    public TextView textViewSpentUSD;
     public Button buttonInsert;
 
     private SharedPreferences sharedPreferences;
@@ -51,6 +53,16 @@ public class MoneyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_money);
 
         initView();
+        initAction();
+    }
+
+    private void initAction() {
+//        if (spinnerOperation.getSelectedItem().toString().trim().equals("Buy")) {
+//            textViewSpentUSD.setText(R.string.text_view_spent_usd);
+//        } else {
+//            textViewSpentUSD.setText(R.string.text_view_get_usd);
+//        }
+//        textViewSpentUSD.refreshDrawableState();
     }
 
     private void initView() {
@@ -61,6 +73,7 @@ public class MoneyActivity extends AppCompatActivity {
         editTextSpentUSD = findViewById(R.id.edit_text_spent_usd);
         editTextAmount = findViewById(R.id.edit_text_amount);
         editTextDate = findViewById(R.id.edit_text_date);
+        textViewSpentUSD = findViewById(R.id.textViewSpentUSD);
 
         progressDialog = new ProgressDialog(MoneyActivity.this);
         progressDialog.setMessage("Loading...");
@@ -113,7 +126,7 @@ public class MoneyActivity extends AppCompatActivity {
         String amount = editTextAmount.getText().toString().trim();
         String date = editTextDate.getText().toString().trim();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbwhaUGiRTlWWvr6ETsK190YiMdbRlzjQjPlA6YqziH-1VvcXTDT_pRLlGliFNJ1vRWjvg/exec", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbxcMwpNkpCxJNp8bT0-AUG2-djx00rwXPrCx2ERe-MqWsmM3tv7Ee528OC4jMOpkRKUow/exec", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(MoneyActivity.this, "Success", Toast.LENGTH_SHORT).show();

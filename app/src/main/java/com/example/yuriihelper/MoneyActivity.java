@@ -9,11 +9,13 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,6 +46,7 @@ public class MoneyActivity extends AppCompatActivity {
     private EditText editTextDate;
     private Button buttonInsert;
     private ImageView imageCalendar;
+    private TextView textViewSpentUSD;
 
     private SharedPreferences sharedPreferences;
     private Calendar calendar;
@@ -108,6 +111,23 @@ public class MoneyActivity extends AppCompatActivity {
                 editTextDate.setText(date + year);
             }
         };
+
+        spinnerOperation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View selectedItemView, int position, long id) {
+                // Buy - 0; Sell - 1
+                if (position == 0) {
+                    textViewSpentUSD.setText(R.string.text_view_spent_usd);
+                } else {
+                    textViewSpentUSD.setText(R.string.text_view_get_usd);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
 
@@ -120,6 +140,7 @@ public class MoneyActivity extends AppCompatActivity {
         editTextAmount = findViewById(R.id.edit_text_amount);
         editTextDate = findViewById(R.id.edit_text_date);
         imageCalendar = findViewById(R.id.image_calendar);
+        textViewSpentUSD = findViewById(R.id.textViewSpentUSD);
 
         progressDialog = new ProgressDialog(MoneyActivity.this);
         progressDialog.setMessage("Loading...");

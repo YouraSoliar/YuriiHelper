@@ -99,9 +99,10 @@
         android:id="@+id/button_insert"
         android:layout_width="170dp"
         android:layout_height="90dp"
-        android:textSize="30sp"
         android:layout_marginBottom="200dp"
         android:text="@string/button_send"
+        android:textSize="30sp"
+        android:backgroundTint="@color/bg_button3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

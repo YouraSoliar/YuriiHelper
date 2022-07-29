@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -15,6 +18,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -33,15 +37,20 @@ public class MainActivity extends AppCompatActivity {
     private Thread secondThread;
     private Runnable runnable;
 
+    private Spinner spinnerCurrency;
+
+    private ItemCurrency itemDollar;
+    private ItemCurrency itemEuro;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().setTitle("Main menu");
-        
+
         initView();
-        initAction();
         initThread();
+        initAction();
     }
 
     private void initAction() {
@@ -50,10 +59,35 @@ public class MainActivity extends AppCompatActivity {
         double euro = 43.0;
         double oldEuro = 44.0;
 
-        textViewDollar.setText(String.valueOf(dollar));
-        textViewOldDollar.setText(String.valueOf(oldDollar));
-        textViewEuro.setText(String.valueOf(euro));
-        textViewOldEuro.setText(String.valueOf(oldEuro));
+
+
+        spinnerCurrency.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View selectedItemView, int position, long id) {
+
+                switch (position) {
+                    case 0:
+                        textViewDollar.setText(itemDollar.getAverage());
+                        textViewEuro.setText(itemEuro.getAverage());
+                        break;
+                    case 1:
+                        textViewDollar.setText(itemDollar.getNbu());
+                        textViewEuro.setText(itemEuro.getNbu());
+                        break;
+                    case 2:
+                        textViewDollar.setText(itemDollar.getBlackMarket());
+                        textViewEuro.setText(itemEuro.getBlackMarket());
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         if (dollar > oldDollar) {
             textViewDollar.setTextColor(ContextCompat.getColor(this, R.color.red));
@@ -77,6 +111,11 @@ public class MainActivity extends AppCompatActivity {
         textViewOldDollar = findViewById(R.id.textViewOldDollar);
         textViewEuro = findViewById(R.id.textViewEuro);
         textViewOldEuro = findViewById(R.id.textViewOldEuro);
+
+        spinnerCurrency = findViewById(R.id.spinnerCurrency);
+
+        itemDollar = new ItemCurrency();
+        itemEuro = new ItemCurrency();
     }
 
 
@@ -109,8 +148,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 getWeb();
-
-
             }
         };
         secondThread = new Thread(runnable);
@@ -130,9 +167,23 @@ public class MainActivity extends AppCompatActivity {
             Elements dollar_elements = dollar.children();
             Elements euro_elements = euro.children();
 
-            Log.d("MyLod", "" + euro_elements.get(0).text());
+            String averageDollar = dollar_elements.get(1).text().substring(0, 6) + " / " + dollar_elements.get(1).text().substring(23, 29);
+            String averageEuro = euro_elements.get(1).text().substring(0, 6) + " / " + euro_elements.get(1).text().substring(23, 29);
+
+            itemDollar.setName(dollar_elements.get(0).text());
+            itemDollar.setAverage(averageDollar);
+            itemDollar.setNbu(dollar_elements.get(2).text().substring(0, 6));
+            itemDollar.setBlackMarket(dollar_elements.get(3).text());
+
+            itemEuro.setName(euro_elements.get(0).text());
+            itemEuro.setAverage(averageEuro);
+            itemEuro.setNbu(euro_elements.get(2).text().substring(0, 6));
+            itemEuro.setBlackMarket(euro_elements.get(3).text());
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }

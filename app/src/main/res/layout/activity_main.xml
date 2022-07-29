@@ -95,6 +95,8 @@
         android:background="@drawable/border_spinner"
         android:entries="@array/spinner_currency"
         android:textAlignment="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="140dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -104,24 +106,23 @@
         android:id="@+id/textViewLabelDollar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:text="@string/text_view_usd"
         android:layout_marginTop="15dp"
-        android:textSize="25sp"
+        android:text="@string/text_view_usd"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/textViewDollar"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerCurrency" />
 
     <TextView
         android:id="@+id/textViewDollar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
         android:text="39.00"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:layout_marginTop="15dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/spinnerCurrency" />
 
     <TextView
@@ -131,58 +132,55 @@
         android:text="39.00"
         android:textStyle="bold"
         android:layout_marginTop="5dp"
-        android:textSize="25sp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/textViewDollar" />
 
     <TextView
         android:id="@+id/textViewLabelOldDollar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:textStyle="bold"
-        android:textSize="20sp"
         android:layout_marginTop="5dp"
         android:text="@string/text_view_week_ago"
-        app:layout_constraintEnd_toStartOf="@+id/textViewOldDollar"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewLabelDollar" />
 
     <TextView
         android:id="@+id/textViewLabelEuro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
         android:text="@string/text_view_euro"
-        android:layout_marginTop="15dp"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/textViewEuro"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerCurrency" />
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelOldDollar" />
 
     <TextView
         android:id="@+id/textViewEuro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
         android:text="42.00"
-        android:textSize="25sp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerCurrency" />
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOldDollar" />
 
 
     <TextView
         android:id="@+id/textViewOldEuro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="42.00"
-        android:textStyle="bold"
-        android:textSize="25sp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="42.00"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/textViewEuro" />
 
 
@@ -190,12 +188,12 @@
         android:id="@+id/textViewLabelOldEuro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:textStyle="bold"
-        android:textSize="20sp"
         android:layout_marginTop="5dp"
         android:text="@string/text_view_week_ago"
-        app:layout_constraintEnd_toStartOf="@+id/textViewOldEuro"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewLabelEuro" />
 
 

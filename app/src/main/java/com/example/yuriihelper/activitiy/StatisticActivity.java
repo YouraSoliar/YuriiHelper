@@ -16,9 +16,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
+import com.example.yuriihelper.AppCompat;
 import com.example.yuriihelper.R;
 
-public class StatisticActivity extends AppCompatActivity {
+public class StatisticActivity extends AppCompat {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

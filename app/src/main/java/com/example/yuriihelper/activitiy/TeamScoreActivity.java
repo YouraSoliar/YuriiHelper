@@ -6,9 +6,10 @@ import androidx.core.content.ContextCompat;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.yuriihelper.AppCompat;
 import com.example.yuriihelper.R;
 
-public class TeamScoreActivity extends AppCompatActivity {
+public class TeamScoreActivity extends AppCompat {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

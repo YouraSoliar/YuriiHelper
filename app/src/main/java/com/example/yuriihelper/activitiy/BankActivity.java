@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.yuriihelper.AppCompat;
 import com.example.yuriihelper.ItemCurrency;
 import com.example.yuriihelper.R;
 
@@ -20,7 +21,7 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
-public class BankActivity extends AppCompatActivity {
+public class BankActivity extends AppCompat {
 
     private TextView textViewDollar;
     private TextView textViewOldDollar;

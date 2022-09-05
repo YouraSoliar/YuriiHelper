@@ -4,6 +4,7 @@
     <string name="button_money">MONEY</string>
     <string name="button_statistic">STATISTIC</string>
     <string name="button_notification">NOTIFICATION</string>
+    <string name="support_settings">SETTINGS</string>
     <string name="button_car">CAR</string>
     <string name="button_team_score">TEAM SCORE</string>
     <string name="button_bank">BANK</string>
@@ -21,10 +22,27 @@
     <string name="text_view_euro">EURO</string>
     <string name="text_view_usd">USD</string>
     <string name="text_view_week_ago">Week ago</string>
+    <string name="settings_languages">Languages</string>
+    <string name="text_view_calculate">Calculate</string>
+    <string name="text_view_number">Number</string>
+    <string name="dialog_language">Choose Language</string>
+    <string name="dialog_percent">Choose Percent operation</string>
+    <string name="toast_incorrect_values">Incorrect values</string>
 
     <string-array name="spinner_type">
         <item>Crypto</item>
         <item>Stock</item>
+    </string-array>
+
+    <string-array name="spinner_percent">
+        <item>%</item>
+        <item>Value</item>
+    </string-array>
+
+    <string-array name="spinner_language">
+        <item>English</item>
+        <item>Українська</item>
+        <item>Русский</item>
     </string-array>
 
     <string-array name="spinner_operation">

@@ -2,6 +2,9 @@ package com.example.yuriihelper.activitiy;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -10,9 +13,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.example.yuriihelper.AppCompat;
 import com.example.yuriihelper.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompat {
+
+    private boolean toSettings = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,4 +74,31 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.support_settings) {
+            toSettings = true;
+            Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (toSettings) {
+            toSettings = false;
+            recreate();
+        }
+    }
 }

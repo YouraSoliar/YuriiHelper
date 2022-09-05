@@ -8,9 +8,10 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.yuriihelper.AppCompat;
 import com.example.yuriihelper.R;
 
-public class CarActivity extends AppCompatActivity {
+public class CarActivity extends AppCompat {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

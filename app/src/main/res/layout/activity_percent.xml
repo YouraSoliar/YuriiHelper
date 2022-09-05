@@ -3,7 +3,81 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/black"
     android:layout_height="match_parent"
     tools:context=".activitiy.PercentActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/text_view_number"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/editTextNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewPercentOperation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+        android:text="%"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/editTextPercent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textViewCalculate"
+        android:layout_width="260dp"
+        android:layout_height="90dp"
+        android:gravity="center"
+        android:textSize="35sp"
+        android:text="@string/text_view_calculate"
+        android:background="@color/bg_button7_2"
+        android:textColor="@color/white"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35sp"
+        android:text="..."
+        android:textColor="@color/white"
+        android:layout_marginBottom="350dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/editTextPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewPercentOperation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewPercentOperation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

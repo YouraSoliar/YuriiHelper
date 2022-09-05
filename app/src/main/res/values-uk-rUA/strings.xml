@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Я я</string>
+    <string name="main_menu">ГОЛОВНЕ МЕНЮ</string>
+    <string name="button_money">ГРОШІ</string>
+    <string name="button_statistic">СТАТИСТИКА</string>
+    <string name="button_notification">НАГАДУВАННЯ</string>
+    <string name="support_settings">НАЛАШТУВАННЯ</string>
+    <string name="button_car">МАШИНА</string>
+    <string name="button_team_score">ОЧКИ КОМАНД</string>
+    <string name="button_bank">БАНК</string>
+    <string name="button_percent">ВІДСОТКИ</string>
+    <string name="text_view_open_google_form">Відкрити Google Form</string>
+    <string name="button_send">Надіслати</string>
+    <string name="text_view_date">Дата</string>
+    <string name="text_view_amount">Сума</string>
+    <string name="text_view_spent_usd">Витратив USD</string>
+    <string name="text_view_get_usd">Отримав USD</string>
+    <string name="text_view_actual_price">Актуальна ціна</string>
+    <string name="text_view_ticker">Тікер</string>
+    <string name="text_view_type">Тип</string>
+    <string name="text_view_operation">Операція</string>
+    <string name="text_view_euro">EURO</string>
+    <string name="text_view_usd">USD</string>
+    <string name="text_view_week_ago">Тиждень тому</string>
+    <string name="settings_languages">Мови</string>
+    <string name="text_view_calculate">Розрахувати</string>
+    <string name="text_view_number">Число</string>
+    <string name="dialog_language">Вибери мову</string>
+    <string name="dialog_percent">Вибери відсоткову операцію</string>
+    <string name="toast_incorrect_values">Неправильне значення</string>
+
+    <string-array name="spinner_type">
+        <item>Крипто</item>
+        <item>Акції</item>
+    </string-array>
+
+    <string-array name="spinner_percent">
+        <item>%</item>
+        <item>значення</item>
+    </string-array>
+
+    <string-array name="spinner_language">
+        <item>English</item>
+        <item>Українська</item>
+        <item>Русский</item>
+    </string-array>
+
+    <string-array name="spinner_operation">
+        <item>Купити</item>
+        <item>Продати</item>
+    </string-array>
+
+    <string-array name="spinner_currency">
+        <item>Середнє в банках</item>
+        <item>Національний банк України</item>
+        <item>Чорний Ринок</item>
+    </string-array>
+</resources>

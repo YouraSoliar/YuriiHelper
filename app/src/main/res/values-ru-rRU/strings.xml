@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Я я</string>
+    <string name="main_menu">Хуй</string>
+    <string name="button_money">Хуй</string>
+    <string name="button_statistic">Хуй</string>
+    <string name="button_notification">Хуй</string>
+    <string name="support_settings">Хуй</string>
+    <string name="button_car">Хуй</string>
+    <string name="button_team_score">Хуй</string>
+    <string name="button_bank">Хуй</string>
+    <string name="button_percent">Хуй</string>
+    <string name="text_view_open_google_form">Хуй</string>
+    <string name="button_send">Хуй</string>
+    <string name="text_view_date">Хуй</string>
+    <string name="text_view_amount">Хуй</string>
+    <string name="text_view_spent_usd">Хуй</string>
+    <string name="text_view_get_usd">Хуй</string>
+    <string name="text_view_actual_price">Хуй</string>
+    <string name="text_view_ticker">Хуй</string>
+    <string name="text_view_type">Хуй</string>
+    <string name="text_view_operation">Хуй</string>
+    <string name="text_view_euro">Хуй</string>
+    <string name="text_view_usd">Хуй</string>
+    <string name="text_view_week_ago">Хуй</string>
+    <string name="settings_languages">Хуй</string>
+    <string name="text_view_calculate">Хуй</string>
+    <string name="text_view_number">Хуй</string>
+    <string name="dialog_language">Хуй</string>
+    <string name="dialog_percent">Хуй</string>
+    <string name="toast_incorrect_values">Хуй</string>
+
+    <string-array name="spinner_type">
+        <item>Хуй</item>
+        <item>Хуй</item>
+    </string-array>
+
+    <string-array name="spinner_percent">
+        <item>Хуй</item>
+        <item>Хуй</item>
+    </string-array>
+
+    <string-array name="spinner_language">
+        <item>English</item>
+        <item>Українська</item>
+        <item>Русский</item>
+    </string-array>
+
+    <string-array name="spinner_operation">
+        <item>Хуй</item>
+        <item>Хуй</item>
+    </string-array>
+
+    <string-array name="spinner_currency">
+        <item>Хуй</item>
+        <item>Хуй</item>
+        <item>Хуй</item>
+    </string-array>
+</resources>

@@ -8,9 +8,10 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.yuriihelper.AppCompat;
 import com.example.yuriihelper.R;
 
-public class NotificationActivity extends AppCompatActivity {
+public class NotificationActivity extends AppCompat {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

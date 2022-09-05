@@ -1,0 +1,9 @@
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="AlwaysShowAction">
+    <item android:id="@+id/support_settings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        app:showAsAction="always"
+        android:title="" />
+</menu>

@@ -29,6 +29,7 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.yuriihelper.AppCompat;
 import com.example.yuriihelper.R;
 
 import java.text.SimpleDateFormat;
@@ -36,7 +37,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MoneyActivity extends AppCompatActivity {
+public class MoneyActivity extends AppCompat {
 
     private Spinner spinnerType;
     private Spinner spinnerOperation;

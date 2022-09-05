@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MoneyActivity">
+    tools:context=".activitiy.MoneyActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineHorizontal"
@@ -102,7 +102,7 @@
         android:layout_marginBottom="200dp"
         android:text="@string/button_send"
         android:textSize="30sp"
-        android:backgroundTint="@color/bg_button3"
+        android:backgroundTint="@color/bg_button3_2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -1,4 +1,4 @@
-package com.example.yuriihelper;
+package com.example.yuriihelper.activitiy;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
@@ -16,6 +16,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
+import com.example.yuriihelper.R;
+
 public class StatisticActivity extends AppCompatActivity {
 
     @Override
@@ -27,10 +29,10 @@ public class StatisticActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        getSupportActionBar().setTitle("Statistic");
+        getSupportActionBar().setTitle(R.string.button_statistic);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(this, R.color.bg_button2));
+        getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(this, R.color.bg_button2_2));
     }
 
     public void openLink(View view) {

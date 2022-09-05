@@ -1,28 +1,28 @@
-package com.example.yuriihelper;
+package com.example.yuriihelper.activitiy;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public class NotificationActivity extends AppCompatActivity {
+import com.example.yuriihelper.R;
+
+public class PercentActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notification);
+        setContentView(R.layout.activity_percent);
 
         initView();
     }
 
     private void initView() {
-        getSupportActionBar().setTitle("Notification");
+        getSupportActionBar().setTitle(R.string.button_percent);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(this, R.color.bg_button4));
+        getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(this, R.color.bg_button7_2));
     }
 
     @Override

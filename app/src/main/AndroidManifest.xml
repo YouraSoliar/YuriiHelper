@@ -17,19 +17,28 @@
         android:theme="@style/Theme.YuriiHelper"
         tools:targetApi="31">
         <activity
-            android:name=".NotificationActivity"
+            android:name=".activitiy.TeamScoreActivity"
             android:exported="false" />
         <activity
-            android:name=".StatisticActivity"
+            android:name=".activitiy.PercentActivity"
             android:exported="false" />
         <activity
-            android:name=".CarActivity"
+            android:name=".activitiy.BankActivity"
             android:exported="false" />
         <activity
-            android:name=".MoneyActivity"
+            android:name=".activitiy.NotificationActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activitiy.StatisticActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activitiy.CarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activitiy.MoneyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activitiy.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

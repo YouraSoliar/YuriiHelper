@@ -1,16 +1,17 @@
-package com.example.yuriihelper;
+package com.example.yuriihelper.activitiy;
 
-import android.content.Intent;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import android.os.Bundle;
-import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
+import com.example.yuriihelper.ItemCurrency;
+import com.example.yuriihelper.R;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -18,39 +19,47 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-
-public class MainActivity extends AppCompatActivity {
-    
-    private TextView textViewCar;
-    private TextView textViewMoney;
-    private TextView textViewStatistic;
-    private TextView textViewNotification;
+public class BankActivity extends AppCompatActivity {
 
     private TextView textViewDollar;
     private TextView textViewOldDollar;
     private TextView textViewEuro;
     private TextView textViewOldEuro;
-
-    private Document document;
-    private Thread secondThread;
-    private Runnable runnable;
-
     private Spinner spinnerCurrency;
 
     private ItemCurrency itemDollar;
     private ItemCurrency itemEuro;
 
+    private Document document;
+    private Thread secondThread;
+    private Runnable runnable;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        getSupportActionBar().setTitle("Main menu");
+        setContentView(R.layout.activity_bank);
 
         initView();
         initThread();
         initAction();
+    }
+
+    private void initView() {
+        getSupportActionBar().setTitle(R.string.button_bank);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(this, R.color.bg_button6_2));
+
+        textViewDollar = findViewById(R.id.textViewDollar);
+        textViewOldDollar = findViewById(R.id.textViewOldDollar);
+        textViewEuro = findViewById(R.id.textViewEuro);
+        textViewOldEuro = findViewById(R.id.textViewOldEuro);
+
+        spinnerCurrency = findViewById(R.id.spinnerCurrency);
+
+        itemDollar = new ItemCurrency();
+        itemEuro = new ItemCurrency();
     }
 
     private void initAction() {
@@ -58,8 +67,6 @@ public class MainActivity extends AppCompatActivity {
         double oldDollar = 38.0;
         double euro = 43.0;
         double oldEuro = 44.0;
-
-
 
         spinnerCurrency.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -98,48 +105,6 @@ public class MainActivity extends AppCompatActivity {
             textViewEuro.setTextColor(ContextCompat.getColor(this, R.color.red));
         } else {
             textViewEuro.setTextColor(ContextCompat.getColor(this, R.color.green));
-        }
-    }
-
-    private void initView() {
-        textViewCar = findViewById(R.id.text_view_car);
-        textViewMoney = findViewById(R.id.text_view_money);
-        textViewStatistic = findViewById(R.id.text_view_statistic);
-        textViewNotification = findViewById(R.id.text_view_notification);
-
-        textViewDollar = findViewById(R.id.textViewDollar);
-        textViewOldDollar = findViewById(R.id.textViewOldDollar);
-        textViewEuro = findViewById(R.id.textViewEuro);
-        textViewOldEuro = findViewById(R.id.textViewOldEuro);
-
-        spinnerCurrency = findViewById(R.id.spinnerCurrency);
-
-        itemDollar = new ItemCurrency();
-        itemEuro = new ItemCurrency();
-    }
-
-
-    public void onClickTextView(View view) {
-        Intent intent;
-        switch (view.getId()) {
-            case R.id.text_view_car:
-                intent = new Intent(getApplicationContext(), CarActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.text_view_money:
-                intent = new Intent(getApplicationContext(), MoneyActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.text_view_statistic:
-                intent = new Intent(getApplicationContext(), StatisticActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.text_view_notification:
-                intent = new Intent(getApplicationContext(), NotificationActivity.class);
-                startActivity(intent);
-                break;
-            default:
-                break;
         }
     }
 
@@ -186,4 +151,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        onBackPressed();
+        return true;
+    }
 }

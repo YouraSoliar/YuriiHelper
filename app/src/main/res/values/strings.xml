@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">Я я</string>
+    <string name="main_menu">MAIN MENU</string>
     <string name="button_money">MONEY</string>
     <string name="button_statistic">STATISTIC</string>
     <string name="button_notification">NOTIFICATION</string>
     <string name="button_car">CAR</string>
+    <string name="button_team_score">TEAM SCORE</string>
+    <string name="button_bank">BANK</string>
+    <string name="button_percent">PERCENT</string>
     <string name="text_view_open_google_form">Open Google Form</string>
     <string name="button_send">Send</string>
     <string name="text_view_date">Date</string>

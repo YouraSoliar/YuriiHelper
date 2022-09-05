@@ -8,10 +8,44 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="bg_button1">#6E5A94</color>
-    <color name="bg_button2">#3F547B</color>
-    <color name="bg_button3">#A95698</color>
-    <color name="bg_button4">#2F4858</color>
+    <color name="neon">#8008c3fa</color>
+
+    <color name="bg_button1_1">#099FFF</color>
+    <color name="bg_button1_2">#0033FF</color>
+    <color name="bg_button1_3">#0062FF</color>
+    <color name="bg_button1_4">#00FFFF</color>
+
+    <color name="bg_button2_1">#9D00FF</color>
+    <color name="bg_button2_2">#6E0DD0</color>
+    <color name="bg_button2_3">#9900FF</color>
+    <color name="bg_button2_4">#CC00FF</color>
+
+    <color name="bg_button3_1">#FF3300</color>
+    <color name="bg_button3_2">#FF0000</color>
+    <color name="bg_button3_3">#FD1C03</color>
+    <color name="bg_button3_4">#FF6600</color>
+
+    <color name="bg_button4_1">#0AEF13</color>
+    <color name="bg_button4_2">#338036</color>
+    <color name="bg_button4_3">#1BB121</color>
+    <color name="bg_button4_4">#02EB0C</color>
+
+    <color name="bg_button5_1">#FFF600</color>
+    <color name="bg_button5_2">#ACAC16</color>
+    <color name="bg_button5_3">#E4E415</color>
+    <color name="bg_button5_4">#D9E745</color>
+
+    <color name="bg_button6_1">#B1674F</color>
+    <color name="bg_button6_2">#4E2D23</color>
+    <color name="bg_button6_3">#834937</color>
+    <color name="bg_button6_4">#CA8F7C</color>
+
+    <color name="bg_button7_1">#FF00CC</color>
+    <color name="bg_button7_2">#FF0099</color>
+    <color name="bg_button7_3">#CC00FF</color>
+    <color name="bg_button7_4">#FF00FF</color>
+
+    <color name="transparent">#00000000</color>
 
     <color name="green">#03A80A</color>
     <color name="red">#C50C0C</color>

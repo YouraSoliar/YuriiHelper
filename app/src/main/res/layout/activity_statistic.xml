@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StatisticActivity">
+    tools:context=".activitiy.StatisticActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -17,7 +17,7 @@
         android:id="@+id/text_view_google_form"
         android:layout_width="250dp"
         android:layout_height="150dp"
-        android:background="@color/bg_button2"
+        android:background="@color/bg_button2_2"
         android:gravity="center"
         android:text="@string/text_view_open_google_form"
         android:textColor="@color/white"

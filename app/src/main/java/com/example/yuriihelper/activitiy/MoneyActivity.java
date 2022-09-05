@@ -1,4 +1,4 @@
-package com.example.yuriihelper;
+package com.example.yuriihelper.activitiy;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
@@ -29,6 +29,7 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.yuriihelper.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -145,10 +146,10 @@ public class MoneyActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(MoneyActivity.this);
         progressDialog.setMessage("Loading...");
 
-        getSupportActionBar().setTitle("Money");
+        getSupportActionBar().setTitle(R.string.button_money);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(this, R.color.bg_button3));
+        getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(this, R.color.bg_button3_2));
 
         calendar = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");

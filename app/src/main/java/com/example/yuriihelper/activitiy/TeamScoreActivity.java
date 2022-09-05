@@ -1,28 +1,28 @@
-package com.example.yuriihelper;
+package com.example.yuriihelper.activitiy;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public class CarActivity extends AppCompatActivity {
+import com.example.yuriihelper.R;
+
+public class TeamScoreActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_car);
+        setContentView(R.layout.activity_team_score);
 
         initView();
     }
 
     private void initView() {
-        getSupportActionBar().setTitle("Car");
+        getSupportActionBar().setTitle(R.string.button_team_score);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(this, R.color.bg_button1));
+        getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(this, R.color.bg_button5_2));
     }
 
     @Override
@@ -31,4 +31,3 @@ public class CarActivity extends AppCompatActivity {
         return true;
     }
 }
-

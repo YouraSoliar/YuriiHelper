@@ -1,4 +1,4 @@
-package com.example.yuriihelper.activitiy;
+package com.example.yuriihelper.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,11 +6,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.example.yuriihelper.AppCompat;
@@ -67,6 +63,10 @@ public class MainActivity extends AppCompat {
                 break;
             case R.id.text_view_team_score:
                 intent = new Intent(getApplicationContext(), TeamScoreActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.text_view_weather:
+                intent = new Intent(getApplicationContext(), WeatherActivity.class);
                 startActivity(intent);
                 break;
             default:

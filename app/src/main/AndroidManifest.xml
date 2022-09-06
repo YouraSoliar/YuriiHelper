@@ -17,31 +17,34 @@
         android:theme="@style/Theme.YuriiHelper"
         tools:targetApi="31">
         <activity
-            android:name=".activitiy.SettingsActivity"
+            android:name=".activity.WeatherActivity"
             android:exported="false" />
         <activity
-            android:name=".activitiy.TeamScoreActivity"
+            android:name=".activity.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".activitiy.PercentActivity"
+            android:name=".activity.TeamScoreActivity"
             android:exported="false" />
         <activity
-            android:name=".activitiy.BankActivity"
+            android:name=".activity.PercentActivity"
             android:exported="false" />
         <activity
-            android:name=".activitiy.NotificationActivity"
+            android:name=".activity.BankActivity"
             android:exported="false" />
         <activity
-            android:name=".activitiy.StatisticActivity"
+            android:name=".activity.NotificationActivity"
             android:exported="false" />
         <activity
-            android:name=".activitiy.CarActivity"
+            android:name=".activity.StatisticActivity"
             android:exported="false" />
         <activity
-            android:name=".activitiy.MoneyActivity"
+            android:name=".activity.CarActivity"
             android:exported="false" />
         <activity
-            android:name=".activitiy.MainActivity"
+            android:name=".activity.MoneyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

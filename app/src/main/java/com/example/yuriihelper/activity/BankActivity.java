@@ -1,6 +1,5 @@
-package com.example.yuriihelper.activitiy;
+package com.example.yuriihelper.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;

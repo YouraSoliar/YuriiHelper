@@ -1,17 +1,13 @@
-package com.example.yuriihelper.activitiy;
+package com.example.yuriihelper.activity;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.yuriihelper.AppCompat;

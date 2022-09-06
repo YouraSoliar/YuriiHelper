@@ -1,4 +1,4 @@
-package com.example.yuriihelper.activitiy;
+package com.example.yuriihelper.activity;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
@@ -18,7 +18,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.android.volley.DefaultRetryPolicy;

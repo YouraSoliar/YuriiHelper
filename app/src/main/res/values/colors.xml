@@ -46,6 +46,11 @@
     <color name="bg_button7_3">#CC00FF</color>
     <color name="bg_button7_4">#FF00FF</color>
 
+    <color name="bg_button8_1">#FF7600</color>
+    <color name="bg_button8_2">#FF3C00</color>
+    <color name="bg_button8_3">#FF6701</color>
+    <color name="bg_button8_4">#FF9D00</color>
+
     <color name="transparent">#00000000</color>
 
     <color name="green">#03A80A</color>

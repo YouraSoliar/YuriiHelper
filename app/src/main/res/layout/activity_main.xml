@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".activitiy.MainActivity">
+    tools:context=".activity.MainActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -152,5 +152,25 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_view_team_score" />
+
+    <TextView
+        android:id="@+id/text_view_weather"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/neon8_bg"
+        android:drawableLeft="@drawable/ic_baseline_wb_sunny_24"
+        android:gravity="center"
+        android:onClick="onClickTextView"
+        android:padding="40dp"
+        android:layout_margin="8dp"
+        android:text="@string/button_weather"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_bank" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
-package com.example.yuriihelper.activitiy;
+package com.example.yuriihelper.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;
@@ -9,21 +8,21 @@ import android.view.MenuItem;
 import com.example.yuriihelper.AppCompat;
 import com.example.yuriihelper.R;
 
-public class TeamScoreActivity extends AppCompat {
+public class CarActivity extends AppCompat {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_team_score);
+        setContentView(R.layout.activity_car);
 
         initView();
     }
 
     private void initView() {
-        getSupportActionBar().setTitle(R.string.button_team_score);
+        getSupportActionBar().setTitle(R.string.button_car);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(this, R.color.bg_button5_2));
+        getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(this, R.color.bg_button1_2));
     }
 
     @Override
@@ -32,3 +31,4 @@ public class TeamScoreActivity extends AppCompat {
         return true;
     }
 }
+

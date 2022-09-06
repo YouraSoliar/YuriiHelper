@@ -1,20 +1,12 @@
-package com.example.yuriihelper.activitiy;
+package com.example.yuriihelper.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NavUtils;
 import androidx.core.content.ContextCompat;
 
-import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.example.yuriihelper.AppCompat;
 import com.example.yuriihelper.R;

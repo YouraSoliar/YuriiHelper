@@ -29,6 +29,18 @@
     <string name="dialog_language">Хуй</string>
     <string name="dialog_percent">Хуй</string>
     <string name="toast_incorrect_values">Хуй</string>
+    <string name="text_view_reset">Хуй</string>
+    <string name="text_view_team_1">Хуй</string>
+    <string name="text_view_team_2">Хуй</string>
+    <string name="button_weather">Хуй</string>
+    <string name="text_view_find">Хуй</string>
+    <string name="edit_text_weather_set_your_city">Хуй</string>
+    <string name="text_view_fast_panel">Хуй</string>
+    <string name="dialog_pin_your_city">Хуй</string>
+    <string name="text_view_hold">Хуй</string>
+    <string name="dialog_set">Хуй</string>
+    <string name="dialog_cancel">Хуй</string>
+    <string name="toast_incorrect_city">Хуй</string>
 
     <string-array name="spinner_type">
         <item>Хуй</item>

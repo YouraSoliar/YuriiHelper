@@ -29,6 +29,18 @@
     <string name="dialog_language">Вибери мову</string>
     <string name="dialog_percent">Вибери відсоткову операцію</string>
     <string name="toast_incorrect_values">Неправильне значення</string>
+    <string name="text_view_reset">Скинути</string>
+    <string name="text_view_team_1">Команда 1</string>
+    <string name="text_view_team_2">Команда 2</string>
+    <string name="button_weather">ПОГОДА</string>
+    <string name="text_view_find">Знайти</string>
+    <string name="edit_text_weather_set_your_city">Вкажіть ваше місто</string>
+    <string name="text_view_fast_panel">Швидка панель</string>
+    <string name="dialog_pin_your_city">Закрипіть ваше місто</string>
+    <string name="text_view_hold">утримуйте</string>
+    <string name="dialog_set">Вказати</string>
+    <string name="dialog_cancel">Облишити</string>
+    <string name="toast_incorrect_city">Неправильне Місто</string>
 
     <string-array name="spinner_type">
         <item>Крипто</item>

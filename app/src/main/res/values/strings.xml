@@ -34,6 +34,12 @@
     <string name="toast_incorrect_values">Incorrect values</string>
     <string name="text_view_find">Find</string>
     <string name="edit_text_weather_set_your_city">Set your City</string>
+    <string name="text_view_fast_panel">Fast panel</string>
+    <string name="dialog_pin_your_city">Pin your City</string>
+    <string name="text_view_hold">hold</string>
+    <string name="dialog_set">Set</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="toast_incorrect_city">Incorrect City</string>
 
 
     <string-array name="spinner_type">

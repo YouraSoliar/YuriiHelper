@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/Android/AndroidStudioProjects/YuriiHelper/app/src/main/res/drawable/border_bottom_spinner.xml" value="0.2885" />
         <entry key="..\:/Users/Android/AndroidStudioProjects/YuriiHelper/app/src/main/res/drawable/border_spinner.xml" value="0.2885" />
+        <entry key="..\:/Users/Android/AndroidStudioProjects/YuriiHelper/app/src/main/res/drawable/dialog_border.xml" value="0.2845" />
         <entry key="..\:/Users/Android/AndroidStudioProjects/YuriiHelper/app/src/main/res/drawable/ic_baseline_account_balance_24.xml" value="0.2845" />
         <entry key="..\:/Users/Android/AndroidStudioProjects/YuriiHelper/app/src/main/res/drawable/ic_baseline_attach_money_24.xml" value="0.2885" />
         <entry key="..\:/Users/Android/AndroidStudioProjects/YuriiHelper/app/src/main/res/drawable/ic_baseline_calendar_month.xml" value="0.2885" />
@@ -31,6 +32,7 @@
         <entry key="..\:/Users/Android/AndroidStudioProjects/YuriiHelper/app/src/main/res/layout/activity_statistic.xml" value="0.21467391304347827" />
         <entry key="..\:/Users/Android/AndroidStudioProjects/YuriiHelper/app/src/main/res/layout/activity_team_score.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Android/AndroidStudioProjects/YuriiHelper/app/src/main/res/layout/activity_weather.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Android/AndroidStudioProjects/YuriiHelper/app/src/main/res/layout/edit_text_layout.xml" value="0.365625" />
         <entry key="..\:/Users/Android/AndroidStudioProjects/YuriiHelper/app/src/main/res/layout/header.xml" value="0.33106884057971014" />
         <entry key="..\:/Users/Android/AndroidStudioProjects/YuriiHelper/app/src/main/res/layout/toolbar_layour.xml" value="0.33106884057971014" />
         <entry key="..\:/Users/Android/AndroidStudioProjects/YuriiHelper/app/src/main/res/menu/main_menu.xml" value="0.365625" />

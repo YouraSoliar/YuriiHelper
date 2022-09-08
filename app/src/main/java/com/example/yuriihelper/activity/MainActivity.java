@@ -69,6 +69,10 @@ public class MainActivity extends AppCompat {
                 intent = new Intent(getApplicationContext(), WeatherActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.text_view_random:
+                intent = new Intent(getApplicationContext(), RandomActivity.class);
+                startActivity(intent);
+                break;
             default:
                 break;
         }

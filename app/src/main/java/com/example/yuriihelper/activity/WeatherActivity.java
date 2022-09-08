@@ -291,12 +291,6 @@ public class WeatherActivity extends AppCompat {
         boolean isDay = unixCurrent < unixSunset;
         boolean isNight = unixCurrent < unixSunrise;
 
-        Log.d("UNIX", String.valueOf(unixCurrent));
-        Log.d("UNIX", String.valueOf(unixSunrise));
-        Log.d("UNIX", String.valueOf(unixSunset));
-        Log.d("UNIX", String.valueOf(isDay));
-        Log.d("UNIX", String.valueOf(isNight));
-
         switch (weather) {
             case "Clouds":
                 if (windSpeed > 3.4) {

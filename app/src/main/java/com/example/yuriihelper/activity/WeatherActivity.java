@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -290,12 +291,18 @@ public class WeatherActivity extends AppCompat {
         boolean isDay = unixCurrent < unixSunset;
         boolean isNight = unixCurrent < unixSunrise;
 
+        Log.d("UNIX", String.valueOf(unixCurrent));
+        Log.d("UNIX", String.valueOf(unixSunrise));
+        Log.d("UNIX", String.valueOf(unixSunset));
+        Log.d("UNIX", String.valueOf(isDay));
+        Log.d("UNIX", String.valueOf(isNight));
+
         switch (weather) {
             case "Clouds":
                 if (windSpeed > 3.4) {
                     imageViewWeather.setImageResource(R.drawable.wind);
                 } else {
-                    if (isDay) {
+                    if (isDay && !isNight) {
                         imageViewWeather.setImageResource(R.drawable.cloudy_sun);
                     } else {
                         imageViewWeather.setImageResource(R.drawable.cloudy_moon);
@@ -303,14 +310,14 @@ public class WeatherActivity extends AppCompat {
                 }
                 break;
             case "Clear":
-                if (isDay) {
+                if (isDay && !isNight) {
                     imageViewWeather.setImageResource(R.drawable.sunny);
                 } else {
                     imageViewWeather.setImageResource(R.drawable.clean_moon);
                 }
                 break;
             case "Drizzle":
-                if (isDay) {
+                if (isDay && !isNight) {
                     imageViewWeather.setImageResource(R.drawable.rain_sun);
                 } else {
                     imageViewWeather.setImageResource(R.drawable.rain_moon);

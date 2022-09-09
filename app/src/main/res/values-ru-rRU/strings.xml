@@ -41,6 +41,7 @@
     <string name="dialog_set">Хуй</string>
     <string name="dialog_cancel">Хуй</string>
     <string name="toast_incorrect_city">Хуй</string>
+    <string name="button_random">Хуй</string>
 
     <string-array name="spinner_type">
         <item>Хуй</item>

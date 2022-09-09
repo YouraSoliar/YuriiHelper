@@ -47,8 +47,6 @@ public class PercentActivity extends AppCompat {
 
     private void initAction() {
 
-
-
         textViewPercentOperation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,8 +58,8 @@ public class PercentActivity extends AppCompat {
             @Override
             public void onClick(View view) {
                 if (isNumeric(editTextNumber.getText().toString()) && isNumeric(editTextPercent.getText().toString())) {
-                    int number = Integer.parseInt(String.valueOf(editTextNumber.getText()));
-                    int percent = Integer.parseInt(String.valueOf(editTextPercent.getText()));
+                    float number = Integer.parseInt(String.valueOf(editTextNumber.getText()));
+                    float percent = Integer.parseInt(String.valueOf(editTextPercent.getText()));
                     float result = 0;
                     if (textViewPercentOperation.getText().toString().equals("%")) {
                         result = (float) ((percent * number) / 100);

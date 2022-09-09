@@ -7,6 +7,7 @@
     <string name="button_notification">НАГАДУВАННЯ</string>
     <string name="support_settings">НАЛАШТУВАННЯ</string>
     <string name="button_car">МАШИНА</string>
+    <string name="button_random">РАНДОМ</string>
     <string name="button_team_score">ОЧКИ КОМАНД</string>
     <string name="button_bank">БАНК</string>
     <string name="button_percent">ВІДСОТКИ</string>

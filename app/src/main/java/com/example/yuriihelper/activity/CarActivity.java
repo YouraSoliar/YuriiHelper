@@ -21,7 +21,6 @@ public class CarActivity extends AppCompat {
     private void initView() {
         getSupportActionBar().setTitle(R.string.button_car);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(this, R.color.bg_button1_2));
     }
 

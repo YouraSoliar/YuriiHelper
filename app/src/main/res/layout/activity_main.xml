@@ -16,29 +16,10 @@
         android:orientation="vertical" />
 
     <TextView
-        android:id="@+id/text_view_car"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/text_view_statistic"
-        android:background="@drawable/neon1_bg"
-        android:padding="40dp"
-        android:onClick="onClickTextView"
-        android:drawableLeft="@drawable/ic_baseline_directions_car_24"
-        android:gravity="center"
-        android:text="@string/button_car"
-        android:layout_margin="8dp"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/text_view_statistic"
         android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:background="@drawable/neon2_bg"
@@ -53,51 +34,12 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_car" />
-
-    <TextView
-        android:id="@+id/text_view_money"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_toStartOf="@+id/text_view_statistic"
-        android:text="@string/button_money"
-        android:textColor="@color/white"
-        android:padding="55dp"
-        android:onClick="onClickTextView"
-        android:drawableLeft="@drawable/ic_baseline_attach_money_24"
-        android:background="@drawable/neon3_bg"
-        android:gravity="center"
-        android:layout_margin="8dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_alignParentStart="true"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/text_view_notification"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/neon4_bg"
-        android:drawableLeft="@drawable/ic_baseline_notifications_24"
-        android:gravity="center"
-        android:onClick="onClickTextView"
-        android:padding="25dp"
-        android:layout_margin="8dp"
-        android:text="@string/button_notification"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_money" />
 
     <TextView
         android:id="@+id/text_view_team_score"
         android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:background="@drawable/neon5_bg"
@@ -117,14 +59,15 @@
     <TextView
         android:id="@+id/text_view_bank"
         android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:background="@drawable/neon6_bg"
         android:drawableLeft="@drawable/ic_baseline_account_balance_24"
         android:gravity="center"
         android:onClick="onClickTextView"
-        android:padding="50dp"
+        android:padding="30dp"
         android:layout_margin="8dp"
         android:text="@string/button_bank"
         android:textColor="@color/white"
@@ -132,32 +75,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_notification" />
-
-    <TextView
-        android:id="@+id/text_view_percent"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/neon7_bg"
-        android:drawableLeft="@drawable/ic_baseline_percent_24"
-        android:gravity="center"
-        android:onClick="onClickTextView"
-        android:padding="45dp"
-        android:layout_margin="8dp"
-        android:text="@string/button_percent"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_team_score" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_view_weather"
         android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:background="@drawable/neon8_bg"
@@ -173,25 +96,5 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/text_view_bank" />
-
-    <TextView
-        android:id="@+id/text_view_random"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/neon9_bg"
-        android:drawableLeft="@drawable/ic_baseline_shuffle_24"
-        android:gravity="center"
-        android:onClick="onClickTextView"
-        android:padding="45dp"
-        android:layout_margin="8dp"
-        android:text="@string/button_random"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_percent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

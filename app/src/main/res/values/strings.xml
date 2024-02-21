@@ -28,6 +28,7 @@
     <string name="text_view_number">Number</string>
     <string name="text_view_reset">Reset</string>
     <string name="text_view_team_1">Team 1</string>
+    <string name="text_view_set">Set</string>
     <string name="text_view_team_2">Team 2</string>
     <string name="dialog_language">Choose Language</string>
     <string name="dialog_percent">Choose Percent operation</string>

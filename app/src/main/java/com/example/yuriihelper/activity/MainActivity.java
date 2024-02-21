@@ -37,28 +37,12 @@ public class MainActivity extends AppCompat {
     public void onClickTextView(View view) {
         Intent intent;
         switch (view.getId()) {
-            case R.id.text_view_car:
-                intent = new Intent(getApplicationContext(), CarActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.text_view_money:
-                intent = new Intent(getApplicationContext(), MoneyActivity.class);
-                startActivity(intent);
-                break;
             case R.id.text_view_statistic:
                 intent = new Intent(getApplicationContext(), StatisticActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.text_view_notification:
-                intent = new Intent(getApplicationContext(), NotificationActivity.class);
-                startActivity(intent);
-                break;
             case R.id.text_view_bank:
                 intent = new Intent(getApplicationContext(), BankActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.text_view_percent:
-                intent = new Intent(getApplicationContext(), PercentActivity.class);
                 startActivity(intent);
                 break;
             case R.id.text_view_team_score:
@@ -67,10 +51,6 @@ public class MainActivity extends AppCompat {
                 break;
             case R.id.text_view_weather:
                 intent = new Intent(getApplicationContext(), WeatherActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.text_view_random:
-                intent = new Intent(getApplicationContext(), RandomActivity.class);
                 startActivity(intent);
                 break;
             default:

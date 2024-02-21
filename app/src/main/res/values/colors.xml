@@ -60,4 +60,8 @@
 
     <color name="green">#03A80A</color>
     <color name="red">#C50C0C</color>
+
+    <color name="teamOneOperations">#FF5050</color>
+    <color name="teamTwoOperations">#56B2DC</color>
+
 </resources>

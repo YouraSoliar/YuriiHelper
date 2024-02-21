@@ -60,6 +60,32 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
+        android:id="@+id/textViewSet"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/text_view_set"
+        android:textColor="@color/bg_button5_2"
+        android:textSize="30sp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewPointSet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewPointSet"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:background="@color/bg_button5_2"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewReset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTeam1" />
+
+    <TextView
         android:id="@+id/textViewReset"
         android:layout_width="200dp"
         android:layout_height="70dp"
@@ -72,4 +98,76 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageSubtractPointOne"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_bg"
+        android:backgroundTint="@color/teamOneOperations"
+        app:layout_constraintEnd_toStartOf="@+id/imageAddPointOne"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTeam1"
+        app:srcCompat="@drawable/baseline_remove_24" />
+
+    <ImageView
+        android:id="@+id/imageAddPointOne"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_bg"
+        android:backgroundTint="@color/teamOneOperations"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTeam1"
+        app:layout_constraintStart_toEndOf="@+id/imageSubtractPointOne"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTeam1"
+        app:srcCompat="@drawable/baseline_add_24" />
+
+    <ImageView
+        android:id="@+id/imageSubtractPointTwo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_bg"
+        android:backgroundTint="@color/teamTwoOperations"
+        app:layout_constraintEnd_toStartOf="@+id/imageAddPointTwo"
+        app:layout_constraintStart_toEndOf="@+id/textViewTeam1"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTeam2"
+        app:srcCompat="@drawable/baseline_remove_24" />
+
+    <ImageView
+        android:id="@+id/imageAddPointTwo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_bg"
+        android:backgroundTint="@color/teamTwoOperations"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageSubtractPointTwo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTeam2"
+        app:srcCompat="@drawable/baseline_add_24" />
+
+    <ImageView
+        android:id="@+id/imageViewSubtractSet"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_bg"
+        android:backgroundTint="@color/bg_button5_4"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewAddSet"
+        app:layout_constraintStart_toStartOf="@+id/textViewPointSet"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPointSet"
+        app:srcCompat="@drawable/baseline_remove_24" />
+
+    <ImageView
+        android:id="@+id/imageViewAddSet"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_bg"
+        android:backgroundTint="@color/bg_button5_4"
+        app:layout_constraintEnd_toEndOf="@+id/textViewSet"
+        app:layout_constraintStart_toEndOf="@+id/imageViewSubtractSet"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPointSet"
+        app:srcCompat="@drawable/baseline_add_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>

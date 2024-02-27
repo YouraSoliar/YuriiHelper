@@ -14,7 +14,15 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.yuriihelper.AppCompat;
+import com.example.yuriihelper.GameConstants;
 import com.example.yuriihelper.R;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
 
 public class GameActivity extends AppCompat {
 
@@ -29,25 +37,16 @@ public class GameActivity extends AppCompat {
     private TextView textViewHint;
     private ImageView imageViewHeart;
     private CheckBox checkBoxAnal;
+    private GameConstants gameConstants;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        gameConstants = new GameConstants(getApplicationContext());
 
         initView();
         initAction();
-    }
-
-    private void initAction() {
-        textViewPlay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (textViewPlay.getText().equals(getText(R.string.text_view_play))) {
-                    textViewPlay.setText(R.string.text_view_next);
-                }
-            }
-        });
     }
 
     private void initView() {
@@ -66,6 +65,51 @@ public class GameActivity extends AppCompat {
         this.textViewHint = findViewById(R.id.textViewHint);
         this.imageViewHeart = findViewById(R.id.imageViewHeart);
         this.checkBoxAnal = findViewById(R.id.checkBoxAnal);
+    }
+
+    private void initAction() {
+        textViewPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (textViewPlay.getText().equals(getText(R.string.text_view_play))) {
+                    textViewPlay.setText(R.string.text_view_next);
+                }
+                String[] values;
+                if (radioButtonShe.isChecked()) {
+                    if (switchMode.isChecked()) {
+                        values = getRandomStringValue(gameConstants.getHotShe());
+                    } else {
+                        values = getRandomStringValue(gameConstants.getWarmUpShe());
+                    }
+                    textViewAction.setText(values[0]);
+                    textViewPlace.setText(values[1]);
+                }
+
+                if (radioButtonHe.isChecked()) {
+                    if (switchMode.isChecked()) {
+                        values = getRandomStringValue(gameConstants.getHotHe(checkBoxAnal.isChecked()));
+                    } else {
+                        values = getRandomStringValue(gameConstants.getWarmUpHe());
+                    }
+                    textViewAction.setText(values[0]);
+                    textViewPlace.setText(values[1]);
+                }
+            }
+        });
+    }
+
+    private String[] getRandomStringValue(HashMap<String, List<String>> mapList) {
+
+        Random random = new Random();
+
+        List<String> keys = new ArrayList<>(mapList.keySet());
+        String randomPlace = keys.get(random.nextInt(keys.size()));
+
+        List<String> values = mapList.get(randomPlace);
+        String randomAction = values.get(random.nextInt(values.size()));
+
+        String[] randomResults = {randomAction, randomPlace};
+        return randomResults;
     }
 
     @Override

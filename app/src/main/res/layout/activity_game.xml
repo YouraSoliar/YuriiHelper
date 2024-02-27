@@ -78,6 +78,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:textColor="@color/bg_button7_3"
             android:text="TextView"
             android:textSize="34sp" />
@@ -95,6 +97,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:textColor="@color/bg_button7_3"
             android:textStyle="bold"
             android:textSize="34sp" />
@@ -133,7 +137,7 @@
         android:layout_height="wrap_content"
         android:text="@string/label_warm_up"
         android:textSize="24sp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="22dp"
         app:layout_constraintBottom_toBottomOf="@+id/switchMode"
         app:layout_constraintEnd_toStartOf="@+id/switchMode"
         app:layout_constraintTop_toTopOf="@+id/switchMode" />

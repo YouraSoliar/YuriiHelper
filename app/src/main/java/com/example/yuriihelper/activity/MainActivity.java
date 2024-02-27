@@ -53,6 +53,10 @@ public class MainActivity extends AppCompat {
                 intent = new Intent(getApplicationContext(), WeatherActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.text_view_game:
+                intent = new Intent(getApplicationContext(), GameActivity.class);
+                startActivity(intent);
+                break;
             default:
                 break;
         }

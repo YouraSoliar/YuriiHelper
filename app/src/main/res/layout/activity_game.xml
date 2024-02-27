@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.GameActivity">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioButtonBoth"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/radio_button_both"
+            android:button="@null"
+            android:textSize="24sp"
+            android:layout_margin="10dp"
+            android:checked="true"
+            android:textColor="@color/white"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:background="@drawable/radio_button_selector"
+            android:gravity="center"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/radioButtonHe"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/radio_button_he"
+            android:button="@null"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:layout_margin="10dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:background="@drawable/radio_button_selector"
+            android:gravity="center"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/radioButtonShe"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/radio_button_she"
+            android:button="@null"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:layout_margin="10dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:background="@drawable/radio_button_selector"
+            android:gravity="center"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/textViewPlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+
+        <TextView
+            android:id="@+id/textViewAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/bg_button7_3"
+            android:text="TextView"
+            android:textSize="34sp" />
+
+        <ImageView
+            android:id="@+id/imageViewHeart"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginVertical="10dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/baseline_favorite_border_24" />
+
+        <TextView
+            android:id="@+id/textViewPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="@color/bg_button7_3"
+            android:textStyle="bold"
+            android:textSize="34sp" />
+
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/switchMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:checked="true"
+        android:thumbTint="@color/bg_button7_1"
+        android:trackTint="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/textViewHot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_hot"
+        android:layout_marginStart="30dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/switchMode"
+        app:layout_constraintStart_toEndOf="@+id/switchMode"
+        app:layout_constraintTop_toTopOf="@+id/switchMode" />
+
+    <TextView
+        android:id="@+id/textViewWarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_warm_up"
+        android:textSize="24sp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/switchMode"
+        app:layout_constraintEnd_toStartOf="@+id/switchMode"
+        app:layout_constraintTop_toTopOf="@+id/switchMode" />
+
+    <TextView
+        android:id="@+id/textViewPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_play"
+        android:background="@drawable/radio_button_selected"
+        android:textSize="30sp"
+        android:paddingVertical="15dp"
+        android:paddingHorizontal="40dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/switchMode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <CheckBox
+        android:id="@+id/checkBoxAnal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check_box_anal"
+        android:textColor="@color/white"
+        android:layout_marginEnd="5dp"
+        android:checked="false"
+        android:buttonTint="@color/bg_button7_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_hint_for_her"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        android:textColor="@color/bg_button9_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

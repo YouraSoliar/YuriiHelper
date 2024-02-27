@@ -33,6 +33,8 @@
     <string name="text_view_reset">Скинути</string>
     <string name="text_view_team_1">Команда 1</string>
     <string name="text_view_team_2">Команда 2</string>
+    <string name="text_view_set">Сет</string>
+    <string name="button_game">ГРА</string>
     <string name="button_weather">ПОГОДА</string>
     <string name="text_view_find">Знайти</string>
     <string name="edit_text_weather_set_your_city">Вкажіть ваше місто</string>
@@ -69,4 +71,40 @@
         <item>Національний банк України</item>
         <item>Чорний Ринок</item>
     </string-array>
+    <string name="radio_button_both">Обоє</string>
+    <string name="radio_button_he">Він</string>
+    <string name="radio_button_she">Вона</string>
+    <string name="text_view_play">Грати</string>
+    <string name="label_warm_up">Розігрів</string>
+    <string name="label_hot">Гарячіше</string>
+    <string name="check_box_anal">Анал</string>
+    <string name="text_view_hint_for_her">(дня неї)</string>
+    <string name="text_view_hint_for_him">(для нього)</string>
+    <string name="action_massage">масаж</string>
+    <string name="action_bite">кусати</string>
+    <string name="action_lick">облизувати</string>
+    <string name="action_kiss">цілувати</string>
+    <string name="action_sniff">нюхати</string>
+    <string name="action_slap">шльопати</string>
+    <string name="action_suck">сосати</string>
+    <string name="action_squeeze">зжимати</string>
+    <string name="action_tease">дразнити</string>
+    <string name="action_jerk_off">дрочити</string>
+    <string name="place_ear">вухо</string>
+    <string name="place_neck">шия</string>
+    <string name="place_legs">ножки</string>
+    <string name="place_ass">попа</string>
+    <string name="place_breast">груди</string>
+    <string name="place_anal">анал</string>
+    <string name="place_dick">член</string>
+    <string name="place_lips">губи</string>
+    <string name="place_arms">руки</string>
+    <string name="place_back">спина</string>
+    <string name="place_stomach">живіт</string>
+    <string name="place_eggs">яйця</string>
+    <string name="place_penis_head">головка</string>
+    <string name="place_vagina">піся</string>
+    <string name="place_clitoris">клітор</string>
+    <string name="text_view_next">Наступне</string>
+    <string name="place_nipples">сосок</string>
 </resources>

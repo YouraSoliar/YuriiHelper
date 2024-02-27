@@ -6,6 +6,7 @@
     <string name="button_notification">NOTIFICATION</string>
     <string name="support_settings">SETTINGS</string>
     <string name="button_car">CAR</string>
+    <string name="button_game">GAME</string>
     <string name="button_weather">WEATHER</string>
     <string name="button_team_score">TEAM SCORE</string>
     <string name="button_bank">BANK</string>
@@ -42,7 +43,44 @@
     <string name="dialog_cancel">Cancel</string>
     <string name="toast_incorrect_city">Incorrect City</string>
     <string name="button_random">RANDOM</string>
+    <string name="radio_button_both">Both</string>
+    <string name="radio_button_he">He</string>
+    <string name="radio_button_she">She</string>
+    <string name="text_view_play">Play</string>
+    <string name="text_view_next">Next</string>
+    <string name="label_warm_up">Warm up</string>
+    <string name="label_hot">Hot</string>
+    <string name="check_box_anal">Anal</string>
+    <string name="text_view_hint_for_her">(for her)</string>
+    <string name="text_view_hint_for_him">(for him)</string>
 
+    <string name="action_massage">massage</string>
+    <string name="action_bite">bite</string>
+    <string name="action_lick">lick</string>
+    <string name="action_kiss">kiss</string>
+    <string name="action_sniff">sniff</string>
+    <string name="action_slap">slap</string>
+    <string name="action_suck">suck</string>
+    <string name="action_squeeze">squeeze</string>
+    <string name="action_tease">tease</string>
+    <string name="action_jerk_off">jerk off</string>
+
+    <string name="place_ear">ear</string>
+    <string name="place_neck">neck</string>
+    <string name="place_arms">arms</string>
+    <string name="place_legs">legs</string>
+    <string name="place_nipples">nipples</string>
+    <string name="place_ass">ass</string>
+    <string name="place_breast">breast</string>
+    <string name="place_anal">anal</string>
+    <string name="place_dick">dick</string>
+    <string name="place_lips">lips</string>
+    <string name="place_back">back</string>
+    <string name="place_stomach">stomach</string>
+    <string name="place_eggs">eggs</string>
+    <string name="place_penis_head">penis head</string>
+    <string name="place_vagina">vagina</string>
+    <string name="place_clitoris">clitoris</string>
 
     <string-array name="spinner_type">
         <item>Crypto</item>

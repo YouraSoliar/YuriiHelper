@@ -3,10 +3,12 @@ package com.example.yuriihelper.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -38,6 +40,7 @@ public class GameActivity extends AppCompat {
     private ImageView imageViewHeart;
     private CheckBox checkBoxAnal;
     private GameConstants gameConstants;
+    private boolean isHe = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,8 @@ public class GameActivity extends AppCompat {
 
         initView();
         initAction();
+
+        imageAnimation(false, true);
     }
 
     private void initView() {
@@ -72,10 +77,16 @@ public class GameActivity extends AppCompat {
             @Override
             public void onClick(View view) {
                 if (textViewPlay.getText().equals(getText(R.string.text_view_play))) {
+                    isHe = 1 == Math.round(Math.random());
                     textViewPlay.setText(R.string.text_view_next);
+                    imageAnimation(true, false);
+                } else {
+                    imageAnimation(false, false);
                 }
+
                 String[] values;
                 if (radioButtonShe.isChecked()) {
+                    textViewHint.setText(R.string.text_view_hint_for_her);
                     if (switchMode.isChecked()) {
                         values = getRandomStringValue(gameConstants.getHotShe());
                     } else {
@@ -86,6 +97,7 @@ public class GameActivity extends AppCompat {
                 }
 
                 if (radioButtonHe.isChecked()) {
+                    textViewHint.setText(R.string.text_view_hint_for_him);
                     if (switchMode.isChecked()) {
                         values = getRandomStringValue(gameConstants.getHotHe(checkBoxAnal.isChecked()));
                     } else {
@@ -94,8 +106,82 @@ public class GameActivity extends AppCompat {
                     textViewAction.setText(values[0]);
                     textViewPlace.setText(values[1]);
                 }
+
+                if (radioButtonBoth.isChecked()) {
+                    if (isHe) {
+                        isHe = false;
+                        textViewHint.setText(R.string.text_view_hint_for_him);
+                        if (switchMode.isChecked()) {
+                            values = getRandomStringValue(gameConstants.getHotHe(checkBoxAnal.isChecked()));
+                        } else {
+                            values = getRandomStringValue(gameConstants.getWarmUpHe());
+                        }
+                    } else {
+                        isHe = true;
+                        textViewHint.setText(R.string.text_view_hint_for_her);
+                        if (switchMode.isChecked()) {
+                            values = getRandomStringValue(gameConstants.getHotShe());
+                        } else {
+                            values = getRandomStringValue(gameConstants.getWarmUpShe());
+                        }
+                    }
+
+                    textViewAction.setText(values[0]);
+                    textViewPlace.setText(values[1]);
+                }
             }
         });
+    }
+
+    private void imageAnimation(boolean isStart, boolean isOpen) {
+        textViewAction.setVisibility(View.GONE);
+        textViewPlace.setVisibility(View.GONE);
+        textViewHint.setVisibility(View.GONE);
+
+        ObjectAnimator animatorEnlargeX = ObjectAnimator.ofFloat(imageViewHeart, "scaleX", 1f, 3.555f);
+        ObjectAnimator animatorEnlargeY = ObjectAnimator.ofFloat(imageViewHeart, "scaleY", 1f, 3.555f);
+        animatorEnlargeX.setDuration(500);
+        animatorEnlargeY.setDuration(500);// Resize in 0.5 seconds
+
+        ObjectAnimator animatorShrinkX = ObjectAnimator.ofFloat(imageViewHeart, "scaleX", 3.555f, 1f);
+        ObjectAnimator animatorShrinkY = ObjectAnimator.ofFloat(imageViewHeart, "scaleY", 3.555f, 1f);
+        animatorShrinkX.setDuration(500);
+        animatorShrinkY.setDuration(500);
+        animatorShrinkX.setStartDelay(500);
+        animatorShrinkY.setStartDelay(500);// Resize in 0.5 seconds
+
+        AlphaAnimation animationVisibility = new AlphaAnimation(0.0f, 1.0f);
+        animationVisibility.setDuration(1000); // 1 second
+        animationVisibility.setFillAfter(true);
+
+        if (isOpen) {
+            animatorEnlargeX.start();
+            animatorEnlargeY.start();
+        }
+
+        if (isStart && !isOpen) {
+            textViewAction.startAnimation(animationVisibility);
+            textViewAction.setVisibility(View.VISIBLE);
+            textViewPlace.startAnimation(animationVisibility);
+            textViewPlace.setVisibility(View.VISIBLE);
+            textViewHint.startAnimation(animationVisibility);
+            textViewHint.setVisibility(View.VISIBLE);
+            animatorShrinkX.start();
+            animatorShrinkY.start();
+        }
+
+        if(!isStart && !isOpen) {
+            animatorEnlargeX.start();
+            animatorEnlargeY.start();
+            textViewAction.startAnimation(animationVisibility);
+            textViewAction.setVisibility(View.VISIBLE);
+            textViewPlace.startAnimation(animationVisibility);
+            textViewPlace.setVisibility(View.VISIBLE);
+            textViewHint.startAnimation(animationVisibility);
+            textViewHint.setVisibility(View.VISIBLE);
+            animatorShrinkX.start();
+            animatorShrinkY.start();
+        }
     }
 
     private String[] getRandomStringValue(HashMap<String, List<String>> mapList) {

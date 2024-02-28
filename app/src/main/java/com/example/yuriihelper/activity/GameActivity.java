@@ -194,7 +194,7 @@ public class GameActivity extends AppCompat {
             hotHe.put(this.getString(R.string.place_breast), Arrays.asList(this.getString(R.string.action_kiss), this.getString(R.string.action_massage), this.getString(R.string.action_lick), this.getString(R.string.action_squeeze)));
             hotHe.put(this.getString(R.string.place_nipples), Arrays.asList(this.getString(R.string.action_suck), this.getString(R.string.action_kiss), this.getString(R.string.action_bite), this.getString(R.string.action_lick)));
             if (isAnal) {
-                hotHe.put(this.getString(R.string.place_anal), Arrays.asList(this.getString(R.string.action_lick), this.getString(R.string.action_massage), this.getString(R.string.action_tease)));
+                hotHe.put(this.getString(R.string.place_anal), Arrays.asList(this.getString(R.string.action_lick), this.getString(R.string.action_massage), this.getString(R.string.action_tease), this.getString(R.string.action_finger)));
             }
         }
 

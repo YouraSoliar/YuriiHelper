@@ -1,6 +1,5 @@
 package com.example.yuriihelper.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.animation.ObjectAnimator;
@@ -16,15 +15,13 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.yuriihelper.AppCompat;
-import com.example.yuriihelper.GameConstants;
 import com.example.yuriihelper.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
-import java.util.Set;
 
 public class GameActivity extends AppCompat {
 
@@ -39,17 +36,21 @@ public class GameActivity extends AppCompat {
     private TextView textViewHint;
     private ImageView imageViewHeart;
     private CheckBox checkBoxAnal;
-    private GameConstants gameConstants;
     private boolean isHe = false;
+    private boolean isAnal = false;
+    private HashMap<String, List<String>> warmUpHe;
+    private HashMap<String, List<String>> warmUpShe;
+    private HashMap<String, List<String>> hotHe;
+    private HashMap<String, List<String>> hotShe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        gameConstants = new GameConstants(getApplicationContext());
 
         initView();
         initAction();
+        initMaps();
 
         imageAnimation(false, true);
     }
@@ -88,9 +89,9 @@ public class GameActivity extends AppCompat {
                 if (radioButtonShe.isChecked()) {
                     textViewHint.setText(R.string.text_view_hint_for_her);
                     if (switchMode.isChecked()) {
-                        values = getRandomStringValue(gameConstants.getHotShe());
+                        values = getRandomStringValue(hotShe);
                     } else {
-                        values = getRandomStringValue(gameConstants.getWarmUpShe());
+                        values = getRandomStringValue(warmUpShe);
                     }
                     textViewAction.setText(values[0]);
                     textViewPlace.setText(values[1]);
@@ -99,9 +100,9 @@ public class GameActivity extends AppCompat {
                 if (radioButtonHe.isChecked()) {
                     textViewHint.setText(R.string.text_view_hint_for_him);
                     if (switchMode.isChecked()) {
-                        values = getRandomStringValue(gameConstants.getHotHe(checkBoxAnal.isChecked()));
+                        values = getRandomStringValue(getHotHe());
                     } else {
-                        values = getRandomStringValue(gameConstants.getWarmUpHe());
+                        values = getRandomStringValue(warmUpHe);
                     }
                     textViewAction.setText(values[0]);
                     textViewPlace.setText(values[1]);
@@ -112,17 +113,17 @@ public class GameActivity extends AppCompat {
                         isHe = false;
                         textViewHint.setText(R.string.text_view_hint_for_him);
                         if (switchMode.isChecked()) {
-                            values = getRandomStringValue(gameConstants.getHotHe(checkBoxAnal.isChecked()));
+                            values = getRandomStringValue(getHotHe());
                         } else {
-                            values = getRandomStringValue(gameConstants.getWarmUpHe());
+                            values = getRandomStringValue(warmUpHe);
                         }
                     } else {
                         isHe = true;
                         textViewHint.setText(R.string.text_view_hint_for_her);
                         if (switchMode.isChecked()) {
-                            values = getRandomStringValue(gameConstants.getHotShe());
+                            values = getRandomStringValue(hotShe);
                         } else {
-                            values = getRandomStringValue(gameConstants.getWarmUpShe());
+                            values = getRandomStringValue(warmUpShe);
                         }
                     }
 
@@ -184,6 +185,54 @@ public class GameActivity extends AppCompat {
         }
     }
 
+    private HashMap<String, List<String>> getHotHe () {
+        if (isAnal != checkBoxAnal.isChecked()) {
+            isAnal = checkBoxAnal.isChecked();
+            hotHe.clear();
+            hotHe.put(this.getString(R.string.place_vagina), Arrays.asList(this.getString(R.string.action_lick), this.getString(R.string.action_sniff), this.getString(R.string.action_kiss), this.getString(R.string.action_massage), this.getString(R.string.action_tease), this.getString(R.string.action_jerk_off)));
+            hotHe.put(this.getString(R.string.place_clitoris), Arrays.asList(this.getString(R.string.action_tease), this.getString(R.string.action_kiss), this.getString(R.string.action_lick), this.getString(R.string.action_suck)));
+            hotHe.put(this.getString(R.string.place_breast), Arrays.asList(this.getString(R.string.action_kiss), this.getString(R.string.action_massage), this.getString(R.string.action_lick), this.getString(R.string.action_squeeze)));
+            hotHe.put(this.getString(R.string.place_nipples), Arrays.asList(this.getString(R.string.action_suck), this.getString(R.string.action_kiss), this.getString(R.string.action_bite), this.getString(R.string.action_lick)));
+            if (isAnal) {
+                hotHe.put(this.getString(R.string.place_anal), Arrays.asList(this.getString(R.string.action_lick), this.getString(R.string.action_massage), this.getString(R.string.action_tease)));
+            }
+        }
+
+        return hotHe;
+    }
+
+    public void initMaps() {
+        warmUpHe = new HashMap<>();
+        warmUpHe.put(this.getString(R.string.place_ear), Arrays.asList(this.getString(R.string.action_massage), this.getString(R.string.action_kiss), this.getString(R.string.action_bite)));
+        warmUpHe.put(this.getString(R.string.place_lips), Arrays.asList(this.getString(R.string.action_kiss), this.getString(R.string.action_bite)));
+        warmUpHe.put(this.getString(R.string.place_neck), Arrays.asList(this.getString(R.string.action_massage), this.getString(R.string.action_kiss), this.getString(R.string.action_bite), this.getString(R.string.action_sniff)));
+        warmUpHe.put(this.getString(R.string.place_arms), Arrays.asList(this.getString(R.string.action_massage), this.getString(R.string.action_kiss)));
+        warmUpHe.put(this.getString(R.string.place_back), Arrays.asList(this.getString(R.string.action_massage), this.getString(R.string.action_kiss)));
+        warmUpHe.put(this.getString(R.string.place_stomach), Arrays.asList(this.getString(R.string.action_massage), this.getString(R.string.action_kiss), this.getString(R.string.action_bite)));
+        warmUpHe.put(this.getString(R.string.place_ass), Arrays.asList(this.getString(R.string.action_massage), this.getString(R.string.action_kiss), this.getString(R.string.action_bite), this.getString(R.string.action_squeeze), this.getString(R.string.action_slap)));
+        warmUpHe.put(this.getString(R.string.place_legs), Arrays.asList(this.getString(R.string.action_massage), this.getString(R.string.action_kiss)));
+
+        warmUpShe = new HashMap<>();
+        warmUpShe.put(this.getString(R.string.place_ear), Arrays.asList(this.getString(R.string.action_massage), this.getString(R.string.action_kiss), this.getString(R.string.action_bite)));
+        warmUpShe.put(this.getString(R.string.place_lips), Arrays.asList(this.getString(R.string.action_kiss), this.getString(R.string.action_bite)));
+        warmUpShe.put(this.getString(R.string.place_neck), Arrays.asList(this.getString(R.string.action_massage), this.getString(R.string.action_kiss), this.getString(R.string.action_bite), this.getString(R.string.action_sniff)));
+        warmUpShe.put(this.getString(R.string.place_arms), Arrays.asList(this.getString(R.string.action_massage), this.getString(R.string.action_kiss)));
+        warmUpShe.put(this.getString(R.string.place_back), Arrays.asList(this.getString(R.string.action_massage)));
+        warmUpShe.put(this.getString(R.string.place_stomach), Arrays.asList(this.getString(R.string.action_massage), this.getString(R.string.action_bite)));
+        warmUpShe.put(this.getString(R.string.place_breast), Arrays.asList(this.getString(R.string.action_massage), this.getString(R.string.action_kiss)));
+
+        hotShe = new HashMap<>();
+        hotShe.put(this.getString(R.string.place_dick), Arrays.asList(this.getString(R.string.action_jerk_off), this.getString(R.string.action_kiss), this.getString(R.string.action_lick), this.getString(R.string.action_slap), this.getString(R.string.action_tease), this.getString(R.string.action_massage), this.getString(R.string.action_squeeze), this.getString(R.string.action_sniff), this.getString(R.string.action_suck), this.getString(R.string.action_bite)));
+        hotShe.put(this.getString(R.string.place_eggs), Arrays.asList(this.getString(R.string.action_kiss), this.getString(R.string.action_lick), this.getString(R.string.action_squeeze), this.getString(R.string.action_massage)));
+        hotShe.put(this.getString(R.string.place_penis_head), Arrays.asList(this.getString(R.string.action_lick), this.getString(R.string.action_kiss), this.getString(R.string.action_suck), this.getString(R.string.action_tease)));
+
+        hotHe = new HashMap<>();
+        hotHe.put(this.getString(R.string.place_vagina), Arrays.asList(this.getString(R.string.action_lick), this.getString(R.string.action_sniff), this.getString(R.string.action_kiss), this.getString(R.string.action_massage), this.getString(R.string.action_tease), this.getString(R.string.action_jerk_off)));
+        hotHe.put(this.getString(R.string.place_clitoris), Arrays.asList(this.getString(R.string.action_tease), this.getString(R.string.action_kiss), this.getString(R.string.action_lick), this.getString(R.string.action_suck), this.getString(R.string.action_finger)));
+        hotHe.put(this.getString(R.string.place_breast), Arrays.asList(this.getString(R.string.action_kiss), this.getString(R.string.action_massage), this.getString(R.string.action_lick), this.getString(R.string.action_squeeze)));
+        hotHe.put(this.getString(R.string.place_nipples), Arrays.asList(this.getString(R.string.action_suck), this.getString(R.string.action_kiss), this.getString(R.string.action_bite), this.getString(R.string.action_lick)));
+    }
+
     private String[] getRandomStringValue(HashMap<String, List<String>> mapList) {
 
         Random random = new Random();
@@ -198,7 +247,7 @@ public class GameActivity extends AppCompat {
         return randomResults;
     }
 
-    @Override
+        @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         onBackPressed();
         return true;

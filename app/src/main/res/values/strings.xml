@@ -56,6 +56,7 @@
 
     <string name="action_massage">Massage</string>
     <string name="action_bite">Bite</string>
+    <string name="action_finger">Finger</string>
     <string name="action_lick">Lick</string>
     <string name="action_kiss">Kiss</string>
     <string name="action_sniff">Sniff</string>
